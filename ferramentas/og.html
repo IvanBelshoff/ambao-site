@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ambão · imagem de compartilhamento</title>
+<!-- Abra este arquivo direto no navegador (depois do npm install) numa janela de 1200 × 630 e capture a tela. -->
+<style>
+@font-face{font-family:Inter;font-weight:500;src:url('../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:Inter;font-weight:600;src:url('../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2')}
+*{margin:0;box-sizing:border-box}
+html,body{width:1200px;height:630px;overflow:hidden;font-family:Inter,sans-serif}
+.ceu{position:absolute;inset:0;background:#082040 url('../public/ceu.jpg') center/cover}
+.veu{position:absolute;inset:0;background:linear-gradient(90deg,rgb(8 32 64/.82) 0%,rgb(8 32 64/.6) 55%,rgb(8 32 64/.3) 100%)}
+.txt{position:absolute;left:80px;top:84px;width:760px;color:#fff;text-shadow:0 1px 1px rgb(5 24 64/.28)}
+.marca{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:600;letter-spacing:.16em}
+h1{margin-top:56px;font-size:76px;font-weight:500;letter-spacing:-.035em;line-height:1.02}
+p{margin-top:28px;font-size:26px;line-height:1.45;opacity:.92;max-width:680px;font-weight:500}
+</style>
+</head>
+<body>
+<div class="ceu"></div><div class="veu"></div>
+<div class="txt">
+  <div class="marca"><svg width="15" height="20" viewBox="0 0 24 32" fill="#fff"><path d="M9.5 0h5v8H22v5h-7.5v19h-5V13H2V8h7.5z"/></svg>AMBÃO</div>
+  <h1>Uma paróquia, muitas igrejas, a mesma comunidade.</h1>
+  <p>Escalas, dízimo, caixa e avisos de cada igreja num só lugar.</p>
+</div>
+</body>
+</html>

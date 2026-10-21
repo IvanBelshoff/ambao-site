@@ -1,0 +1,28 @@
+/* O R. responde quando a dor termina de ser lida: a faixa se escreve da esquerda. */
+.aguarda {
+  clip-path: inset(0 100% 0 0 round 4px);
+}
+
+.aguarda .r {
+  opacity: 0;
+}
+
+.respondida {
+  clip-path: inset(0 0 0 0 round 4px);
+  transition: clip-path 900ms var(--ease-saida);
+}
+
+.respondida .r {
+  opacity: 1;
+  transition: opacity 400ms var(--ease-saida) 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aguarda {
+    clip-path: none;
+  }
+
+  .aguarda .r {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T13:11:58.333Z",
+  "title": "Design System: Ambão (site)",
+  "extensions": {
+    "inherits": "../ambao-web/DESIGN.md",
+    "colorMeta": {
+      "azul-marinho": {
+        "role": "primary",
+        "displayName": "Azul marinho",
+        "canonical": "#1243a0",
+        "oklch": "oklch(41.3% 0.16 261.7)",
+        "tonalRamp": [
+          "oklch(15% 0.058 261.7)",
+          "oklch(26.4% 0.1 261.7)",
+          "oklch(37.9% 0.142 261.7)",
+          "oklch(49.3% 0.16 261.7)",
+          "oklch(60.7% 0.147 261.7)",
+          "oklch(72.1% 0.105 261.7)",
+          "oklch(83.6% 0.063 261.7)",
+          "oklch(95% 0.02 261.7)"
+        ]
+      },
+      "azul-marinho-hover": {
+        "role": "primary",
+        "displayName": "Azul marinho profundo",
+        "canonical": "#0e3680",
+        "oklch": "oklch(35.6% 0.133 261.4)",
+        "tonalRamp": [
+          "oklch(15% 0.058 261.4)",
+          "oklch(26.4% 0.1 261.4)",
+          "oklch(37.9% 0.133 261.4)",
+          "oklch(49.3% 0.133 261.4)",
+          "oklch(60.7% 0.133 261.4)",
+          "oklch(72.1% 0.105 261.4)",
+          "oklch(83.6% 0.063 261.4)",
+          "oklch(95% 0.02 261.4)"
+        ]
+      },
+      "azul-lavado": {
+        "role": "primary",
+        "displayName": "Azul lavado",
+        "canonical": "#eef3fb",
+        "oklch": "oklch(96.3% 0.012 259.8)",
+        "tonalRamp": [
+          "oklch(15% 0.012 259.8)",
+          "oklch(26.4% 0.012 259.8)",
+          "oklch(37.9% 0.012 259.8)",
+          "oklch(49.3% 0.012 259.8)",
+          "oklch(60.7% 0.012 259.8)",
+          "oklch(72.1% 0.012 259.8)",
+          "oklch(83.6% 0.012 259.8)",
+          "oklch(95% 0.012 259.8)"
+        ]
+      },
+      "rosa-claro": {
+        "role": "secondary",
+        "displayName": "Rosa claro",
+        "canonical": "#f8e7ec",
+        "oklch": "oklch(94.3% 0.02 357.6)",
+        "tonalRamp": [
+          "oklch(15% 0.02 357.6)",
+          "oklch(26.4% 0.02 357.6)",
+          "oklch(37.9% 0.02 357.6)",
+          "oklch(49.3% 0.02 357.6)",
+          "oklch(60.7% 0.02 357.6)",
+          "oklch(72.1% 0.02 357.6)",
+          "oklch(83.6% 0.02 357.6)",
+          "oklch(95% 0.02 357.6)"
+        ]
+      },
+      "rosa-traco": {
+        "role": "secondary",
+        "displayName": "Rosa de traço",
+        "canonical": "#d4899e",
+        "oklch": "oklch(71.3% 0.095 1.6)",
+        "tonalRamp": [
+          "oklch(15% 0.058 1.6)",
+          "oklch(26.4% 0.095 1.6)",
+          "oklch(37.9% 0.095 1.6)",
+          "oklch(49.3% 0.095 1.6)",
+          "oklch(60.7% 0.095 1.6)",
+          "oklch(72.1% 0.095 1.6)",
+          "oklch(83.6% 0.063 1.6)",
+          "oklch(95% 0.02 1.6)"
+        ]
+      },
+      "rosa-forte": {
+        "role": "secondary",
+        "displayName": "Rosa forte",
+        "canonical": "#b0566f",
+        "oklch": "oklch(57% 0.12 4)",
+        "tonalRamp": [
+          "oklch(15% 0.058 4)",
+          "oklch(26.4% 0.1 4)",
+          "oklch(37.9% 0.12 4)",
+          "oklch(49.3% 0.12 4)",
+          "oklch(60.7% 0.12 4)",
+          "oklch(72.1% 0.105 4)",
+          "oklch(83.6% 0.063 4)",
+          "oklch(95% 0.02 4)"
+        ]
+      },
+      "noite": {
+        "role": "tertiary",
+        "displayName": "Noite do céu",
+        "canonical": "#082040",
+        "oklch": "oklch(24.5% 0.068 256.8)",
+        "tonalRamp": [
+          "oklch(15% 0.058 256.8)",
+          "oklch(26.4% 0.068 256.8)",
+          "oklch(37.9% 0.068 256.8)",
+          "oklch(49.3% 0.068 256.8)",
+          "oklch(60.7% 0.068 256.8)",
+          "oklch(72.1% 0.068 256.8)",
+          "oklch(83.6% 0.063 256.8)",
+          "oklch(95% 0.02 256.8)"
+        ]
+      },
+      "branco": {
+        "role": "neutral",
+        "displayName": "Branco",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100% 0 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26.4% 0 89.9)",
+          "oklch(37.9% 0 89.9)",
+          "oklch(49.3% 0 89.9)",
+          "oklch(60.7% 0 89.9)",
+          "oklch(72.1% 0 89.9)",
+          "oklch(83.6% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#111111",
+        "oklch": "oklch(17.8% 0 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26.4% 0 89.9)",
+          "oklch(37.9% 0 89.9)",
+          "oklch(49.3% 0 89.9)",
+          "oklch(60.7% 0 89.9)",
+          "oklch(72.1% 0 89.9)",
+          "oklch(83.6% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Tinta suave",
+        "canonical": "#585858",
+        "oklch": "oklch(46% 0 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26.4% 0 89.9)",
+          "oklch(37.9% 0 89.9)",
+          "oklch(49.3% 0 89.9)",
+          "oklch(60.7% 0 89.9)",
+          "oklch(72.1% 0 89.9)",
+          "oklch(83.6% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "fio-campo": {
+        "role": "neutral",
+        "displayName": "Fio de campo",
+        "canonical": "#8f8f8f",
+        "oklch": "oklch(65% 0 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26.4% 0 89.9)",
+          "oklch(37.9% 0 89.9)",
+          "oklch(49.3% 0 89.9)",
+          "oklch(60.7% 0 89.9)",
+          "oklch(72.1% 0 89.9)",
+          "oklch(83.6% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "fio": {
+        "role": "neutral",
+        "displayName": "Fio",
+        "canonical": "#e5e5e5",
+        "oklch": "oklch(92.2% 0 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26.4% 0 89.9)",
+          "oklch(37.9% 0 89.9)",
+          "oklch(49.3% 0 89.9)",
+          "oklch(60.7% 0 89.9)",
+          "oklch(72.1% 0 89.9)",
+          "oklch(83.6% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "superficie": {
+        "role": "neutral",
+        "displayName": "Superfície",
+        "canonical": "#fafafa",
+        "oklch": "oklch(98.5% 0 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26.4% 0 89.9)",
+          "oklch(37.9% 0 89.9)",
+          "oklch(49.3% 0 89.9)",
+          "oklch(60.7% 0 89.9)",
+          "oklch(72.1% 0 89.9)",
+          "oklch(83.6% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "perigo": {
+        "role": "status",
+        "displayName": "Perigo",
+        "canonical": "#b3261e",
+        "oklch": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "oklch(15% 0.058 28.7)",
+          "oklch(26.4% 0.1 28.7)",
+          "oklch(37.9% 0.142 28.7)",
+          "oklch(49.3% 0.178 28.7)",
+          "oklch(60.7% 0.147 28.7)",
+          "oklch(72.1% 0.105 28.7)",
+          "oklch(83.6% 0.063 28.7)",
+          "oklch(95% 0.02 28.7)"
+        ]
+      },
+      "sucesso": {
+        "role": "status",
+        "displayName": "Sucesso",
+        "canonical": "#1b6b3a",
+        "oklch": "oklch(46.8% 0.109 152)",
+        "tonalRamp": [
+          "oklch(15% 0.058 152)",
+          "oklch(26.4% 0.1 152)",
+          "oklch(37.9% 0.109 152)",
+          "oklch(49.3% 0.109 152)",
+          "oklch(60.7% 0.109 152)",
+          "oklch(72.1% 0.105 152)",
+          "oklch(83.6% 0.063 152)",
+          "oklch(95% 0.02 152)"
+        ]
+      },
+      "aviso": {
+        "role": "status",
+        "displayName": "Aviso",
+        "canonical": "#8a5a00",
+        "oklch": "oklch(50.8% 0.108 73.3)",
+        "tonalRamp": [
+          "oklch(15% 0.058 73.3)",
+          "oklch(26.4% 0.1 73.3)",
+          "oklch(37.9% 0.108 73.3)",
+          "oklch(49.3% 0.108 73.3)",
+          "oklch(60.7% 0.108 73.3)",
+          "oklch(72.1% 0.105 73.3)",
+          "oklch(83.6% 0.063 73.3)",
+          "oklch(95% 0.02 73.3)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-ceu": {
+        "displayName": "Display do céu",
+        "purpose": "Título da abertura no céu. 2.625rem no celular, 3.5rem a partir de 640px, 4.25rem a partir de 1280px."
+      },
+      "titulo-momento": {
+        "displayName": "Título do momento",
+        "purpose": "A dor como pergunta, medida de 18ch. 2rem, 2.5rem a partir de 640px, 2.75rem a partir de 1280px."
+      },
+      "titulo-secao": {
+        "displayName": "Título de seção",
+        "purpose": "Seções fora do folheto. 2rem, 2.5rem a partir de 640px."
+      },
+      "leitura": {
+        "displayName": "Leitura",
+        "purpose": "Texto da dor e da resposta, medida de 34rem. Na resposta, 500 e entrelinha 1.55."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Recurso, ficha, decisão e lista do que vem junto."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Âncoras do topo e da barra, aba da placa."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Legenda da vitrine, nota de dados fictícios e rodapé."
+      },
+      "rubrica": {
+        "displayName": "Rubrica",
+        "purpose": "A hora do momento, corrida no início da leitura, em rosa forte. Nunca acima de título."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-card",
+        "value": "0 24px 60px -20px rgb(9 38 94 / 0.45)",
+        "purpose": "Só a placa do painel sobre o céu, com anel branco a 35%."
+      },
+      {
+        "name": "ceu-texto",
+        "value": "0 1px 1px rgb(5 24 64 / 0.28)",
+        "purpose": "text-shadow de todo texto branco sobre o céu."
+      }
+    ],
+    "gradients": [
+      {
+        "name": "veu",
+        "value": "linear-gradient(90deg, rgb(8 32 64 / 0.74) 0%, rgb(8 32 64 / 0.5) 42%, rgb(8 32 64 / 0.1) 100%), linear-gradient(180deg, rgb(8 32 64 / 0.3) 0%, rgb(8 32 64 / 0) 30%, rgb(8 32 64 / 0.15) 100%)",
+        "purpose": "Véu do céu a partir de 1024px."
+      },
+      {
+        "name": "veu-celular",
+        "value": "linear-gradient(180deg, rgb(8 32 64 / 0.74) 0%, rgb(8 32 64 / 0.6) 55%, rgb(8 32 64 / 0.4) 100%)",
+        "purpose": "Véu do céu abaixo de 1024px."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-saida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva de todo movimento do site."
+      },
+      {
+        "name": "tela-chega",
+        "value": "280ms ease-saida; de opacity 0, translateY(6px), blur(2px) ao repouso",
+        "purpose": "A tela nova da placa ao trocar de aba."
+      },
+      {
+        "name": "resposta-escreve",
+        "value": "clip-path 900ms ease-saida; o R. em opacity 400ms com 120ms de atraso",
+        "purpose": "A faixa do R. se escreve da esquerda quando entra na vista."
+      },
+      {
+        "name": "barra-entra",
+        "value": "transform 320ms ease-saida",
+        "purpose": "A barra fixa desliza de cima quando o céu sai da tela."
+      },
+      {
+        "name": "ceu-video",
+        "value": "opacity 1000ms",
+        "purpose": "O vídeo do céu aparece sobre a imagem parada."
+      },
+      {
+        "name": "hover",
+        "value": "150ms colors",
+        "purpose": "Hover de botão e aba."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ],
+    "layout": {
+      "container": "90% com teto de 78rem",
+      "scrollPaddingTop": "5rem",
+      "momentoStickyTop": "7rem"
+    }
+  },
+  "components": [
+    {
+      "name": "Botão do céu",
+      "kind": "button",
+      "refersTo": "button-ceu-primario",
+      "description": "A ação principal sobre o céu: branco com texto azul marinho; o contorno branco é a alternativa.",
+      "html": "<div class=\"ds-ceu\"><a href=\"#\" class=\"ds-btn-ceu\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5h-8.5l-4.5 3.5v-3.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z\"/><path d=\"M8 10h8M8 13h5\"/></svg>Conversar no WhatsApp</a><a href=\"#\" class=\"ds-btn-ceu-contorno\">Ver como funciona</a></div>",
+      "css": ".ds-ceu { display: flex; flex-wrap: wrap; gap: 12px; padding: 32px; background: linear-gradient(90deg, rgb(8 32 64 / 0.74), rgb(8 32 64 / 0.5)), #082040; font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-btn-ceu, .ds-btn-ceu-contorno { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 20px; border-radius: 4px; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color 150ms; } .ds-btn-ceu { background: #fff; color: #1243a0; } .ds-btn-ceu:hover { background: #f8e7ec; } .ds-btn-ceu-contorno { color: #fff; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.6); } .ds-btn-ceu-contorno:hover { background: rgb(255 255 255 / 0.12); } .ds-btn-ceu:focus-visible, .ds-btn-ceu-contorno:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Botão primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A ação no papel, como o Conversar da barra fixa.",
+      "html": "<a href=\"#\" class=\"ds-btn-primario\">Conversar no WhatsApp</a>",
+      "css": ".ds-btn-primario { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 4px; background: #1243a0; color: #fff; font: 500 15px Inter, ui-sans-serif, system-ui, sans-serif; text-decoration: none; transition: background-color 150ms; } .ds-btn-primario:hover { background: #0e3680; } .ds-btn-primario:focus-visible { outline: 2px solid #1243a0; outline-offset: 2px; }"
+    },
+    {
+      "name": "Botão de contorno",
+      "kind": "button",
+      "refersTo": "button-contorno",
+      "description": "Alternativa no papel, como o LinkedIn do autor.",
+      "html": "<a href=\"#\" class=\"ds-btn-contorno\">LinkedIn</a>",
+      "css": ".ds-btn-contorno { display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 4px; color: #111; box-shadow: inset 0 0 0 1px #8f8f8f; font: 500 15px Inter, ui-sans-serif, system-ui, sans-serif; text-decoration: none; } .ds-btn-contorno:hover { background: #f8e7ec; color: #1243a0; } .ds-btn-contorno:focus-visible { outline: 2px solid #1243a0; outline-offset: 2px; }"
+    },
+    {
+      "name": "Barra fixa",
+      "kind": "nav",
+      "refersTo": "barra",
+      "description": "Aparece quando o céu sai da tela: marca, âncoras e a ação.",
+      "html": "<div class=\"ds-barra\"><a href=\"#\" class=\"ds-marca\"><svg width=\"12\" height=\"16\" viewBox=\"0 0 24 32\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M9.5 0h5v8H22v5h-7.5v19h-5V13H2V8h7.5z\"/></svg>Ambão</a><nav class=\"ds-ancoras\"><a href=\"#\">Escalas</a><a href=\"#\">Dízimo e caixa</a><a href=\"#\">Avisos</a></nav><a href=\"#\" class=\"ds-barra-acao\">Conversar</a></div>",
+      "css": ".ds-barra { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; padding: 0 24px; background: rgb(255 255 255 / 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e5e5e5; font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-marca { display: flex; align-items: center; gap: 10px; color: #1243a0; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; } .ds-ancoras { display: flex; gap: 4px; } .ds-ancoras a { padding: 8px 12px; border-radius: 4px; font-size: 14px; font-weight: 500; color: #585858; text-decoration: none; } .ds-ancoras a:hover { background: #f8e7ec; color: #1243a0; } .ds-ancoras a:focus-visible, .ds-barra-acao:focus-visible { outline: 2px solid #1243a0; outline-offset: 2px; } .ds-barra-acao { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 4px; background: #1243a0; color: #fff; font-size: 15px; font-weight: 500; text-decoration: none; } .ds-barra-acao:hover { background: #0e3680; }"
+    },
+    {
+      "name": "Abas da placa",
+      "kind": "chip",
+      "refersTo": "aba-selecionada",
+      "description": "A lateral da placa que troca a tela do painel recriado.",
+      "html": "<div class=\"ds-abas\" role=\"tablist\"><button class=\"ds-aba\" role=\"tab\" aria-selected=\"true\">Início</button><button class=\"ds-aba\" role=\"tab\" aria-selected=\"false\">Participações</button><button class=\"ds-aba\" role=\"tab\" aria-selected=\"false\">Dízimos</button></div>",
+      "css": ".ds-abas { display: flex; flex-direction: column; gap: 2px; width: 10.5rem; padding: 10px; background: #fff; border-right: 1px solid #e5e5e5; } .ds-aba { display: flex; align-items: center; height: 40px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #585858; font: 500 14px Inter, ui-sans-serif, system-ui, sans-serif; text-align: left; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-aba:hover, .ds-aba[aria-selected=\"true\"] { background: #f8e7ec; color: #1243a0; } .ds-aba:focus-visible { outline: 2px solid #1243a0; outline-offset: 2px; }"
+    },
+    {
+      "name": "Placa do painel",
+      "kind": "card",
+      "refersTo": "placa",
+      "description": "A tela do painel recriada sobre o céu, com a única sombra do site.",
+      "html": "<div class=\"ds-ceu-fundo\"><div class=\"ds-placa\"><p class=\"ds-placa-nota\">Dados fictícios</p><h3>São José Operário</h3><p>Quarta, 21 de outubro · Coordenação</p></div></div>",
+      "css": ".ds-ceu-fundo { padding: 40px; background: #082040; font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-placa { position: relative; padding: 24px 28px; border-radius: 4px; background: #fff; color: #111; box-shadow: 0 24px 60px -20px rgb(9 38 94 / 0.45), 0 0 0 1px rgb(255 255 255 / 0.35); } .ds-placa h3 { margin: 0; font-size: 1.625rem; font-weight: 500; letter-spacing: -0.025em; } .ds-placa p { margin: 4px 0 0; font-size: 13px; color: #585858; } .ds-placa .ds-placa-nota { position: absolute; top: 20px; right: 20px; margin: 0; padding: 2px 10px; border: 1px solid #e5e5e5; border-radius: 9999px; background: #fafafa; font-size: 12px; }"
+    },
+    {
+      "name": "Momento do folheto",
+      "kind": "custom",
+      "refersTo": "resposta",
+      "description": "A pergunta, a rubrica corrida da hora, e a resposta na faixa rosa com o R.",
+      "html": "<div class=\"ds-momento\"><h2>Quem faz a leitura na missa de domingo?</h2><p class=\"ds-leitura\"><span class=\"ds-rubrica\">Sábado à noite. </span>A coordenação ainda confirma pelo grupo quem lê.</p><p class=\"ds-resposta\"><span class=\"ds-r\">R.</span>No Ambão, a escala é publicada com antecedência e cada pessoa responde.</p></div>",
+      "css": ".ds-momento { max-width: 34rem; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #111; } .ds-momento h2 { margin: 0; max-width: 18ch; font-size: 2.5rem; line-height: 1.1; font-weight: 500; letter-spacing: -0.03em; text-wrap: balance; } .ds-leitura { margin: 24px 0 0; font-size: 1.125rem; line-height: 1.7; } .ds-rubrica { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #b0566f; } .ds-resposta { margin: 24px 0 0; padding: 16px 20px; border-radius: 4px; background: #f8e7ec; font-size: 1.125rem; line-height: 1.55; font-weight: 500; animation: ds-escreve 900ms cubic-bezier(0.16, 1, 0.3, 1) both; } .ds-r { display: inline-block; margin-right: 8px; font-weight: 600; color: #1243a0; } @keyframes ds-escreve { from { clip-path: inset(0 100% 0 0 round 4px); } to { clip-path: inset(0 0 0 0 round 4px); } } @media (prefers-reduced-motion: reduce) { .ds-resposta { animation: none; } }"
+    },
+    {
+      "name": "Vitrine e folha",
+      "kind": "card",
+      "refersTo": "vitrine",
+      "description": "A tela recriada em folha branca sobre a faixa de rosa claro, com legenda.",
+      "html": "<figure class=\"ds-vitrine\"><div class=\"ds-folha\"><p class=\"ds-folha-apoio\">Recibo nº 214</p><h3>Oferta de dízimo</h3><p>Maria das Graças Souza</p><span class=\"ds-selo\">Publicada</span></div><figcaption>O recibo do mês. Dados fictícios.</figcaption></figure>",
+      "css": ".ds-vitrine { margin: 0; max-width: 28rem; padding: 28px; border-radius: 4px; background: #f8e7ec; font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-folha { padding: 20px; border-radius: 4px; background: #fff; color: #111; font-size: 15px; } .ds-folha h3 { margin: 4px 0 0; font-size: 17px; font-weight: 500; color: #1243a0; } .ds-folha p { margin: 4px 0 0; } .ds-folha .ds-folha-apoio { margin: 0; font-size: 13px; color: #585858; } .ds-selo { display: inline-block; margin-top: 12px; padding: 2px 10px; border-radius: 9999px; background: #eef3fb; color: #1243a0; font-size: 12px; font-weight: 500; } .ds-vitrine figcaption { margin-top: 16px; font-size: 13px; color: rgb(17 17 17 / 0.7); }"
+    },
+    {
+      "name": "Lista de recursos e ficha",
+      "kind": "custom",
+      "refersTo": "ficha",
+      "description": "Régua de 1px, sem ícone nem card: o recurso e a ficha técnica.",
+      "html": "<dl class=\"ds-recursos\"><div><dt>Calendário</dt><dd>Eventos da paróquia e os internos de cada igreja.</dd></div></dl><dl class=\"ds-ficha\"><div><dt>API</dt><dd>NestJS, TypeORM e PostgreSQL.</dd></div><div><dt>Painel</dt><dd>React 19, Vite e Tailwind CSS 4.</dd></div></dl>",
+      "css": ".ds-recursos, .ds-ficha { margin: 0 0 24px; max-width: 32rem; font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-recursos > div { padding: 20px 0; border-top: 1px solid #e5e5e5; } .ds-recursos dt { font-size: 1.0625rem; font-weight: 500; color: #111; } .ds-recursos dd { margin: 4px 0 0; font-size: 15px; line-height: 1.6; color: #585858; } .ds-ficha { border-top: 1px solid #e5e5e5; } .ds-ficha > div { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #e5e5e5; } .ds-ficha dt { font-size: 15px; font-weight: 500; color: #1243a0; } .ds-ficha dd { margin: 0; font-size: 15px; line-height: 1.6; color: #111; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A entrada e o folheto",
+    "overview": "O site é a porta do Ambão. Abre no mesmo céu da tela de login do painel, com o painel vivo flutuando nele numa placa branca, e depois vira um folheto dominical: papel branco, faixas de rosa claro, azul marinho como única voz de ação. Fecha de novo no céu, com o \"Ide em paz\". O céu é o rito de entrada e o rito final; o miolo é leitura calma.\n\nEste sistema é uma extensão do mundo do painel. A base comum (paleta, Inter, o canto de 4px, ícone de traço 1.75, a cruz como único ornamento, a regra do papel sobre o rosa, os selos, o disco de iniciais, o card do feed) está em `ambao-web/DESIGN.md` e vale aqui sem repetição. Este arquivo registra só o que o site acrescenta: o céu com o véu, a placa com lateral que troca a tela, o momento do folheto, a vitrine com a folha, a barra fixa, a lista de recursos sem ícone e a ficha técnica.\n\nO site pode o que o painel recusa nas telas de operação: o céu em vídeo, o véu em gradiente e a sombra da placa. Os três pertencem à entrada e só aparecem sobre a noite do céu. Do primeiro momento em diante, a profundidade volta a ser tonal.",
+    "keyCharacteristics": [
+      "Céu do login como abertura e fechamento, sob um véu de noite",
+      "A placa do painel, branca, com a sombra da entrada e a lateral que funciona",
+      "O momento do folheto: a hora em rubrica corrida, a dor como pergunta, o R. na faixa rosa",
+      "A tela recriada sobre a vitrine rosa, em folha branca",
+      "Azul marinho só na ação; rosa claro no calor, no hover e na faixa",
+      "Uma face só, Inter, e a cruz como único ornamento"
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Herdada do painel. Azul marinho é a única cor de ação. No céu, a ação é o branco com texto azul marinho; no papel, é o azul cheio. Nunca os dois botões cheios lado a lado.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Veil Rule",
+        "body": "Texto branco sobre o céu só existe sobre o véu de noite e com a sombra curta da entrada (`0 1px 1px rgb(5 24 64 / 0.28)`). O véu é o único gradiente do site e não sai do céu.",
+        "section": "colors"
+      },
+      {
+        "name": "The Run-In Rubric Rule",
+        "body": "A rubrica corre na primeira linha da leitura, como a rubrica do missal. Ela nunca sobe para cima do título como rótulo de seção; o título do momento abre sozinho.",
+        "section": "typography"
+      },
+      {
+        "name": "The Question Heading Rule",
+        "body": "Todo momento do folheto abre com a dor como pergunta, no título do momento. A resposta não é título: é a faixa do R.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shared Measure Rule",
+        "body": "Tudo fora do céu cabe em 90% com teto de 78rem. Medida estreita (34rem de leitura, 18ch de título) aperta o texto por dentro, nunca a seção.",
+        "section": "layout"
+      },
+      {
+        "name": "The Sky Only Rule",
+        "body": "Vídeo, véu e sombra moram no céu. Do primeiro momento em diante, profundidade é lavagem de rosa claro ou azul lavado, nunca sombra.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Paper on Pink Rule",
+        "body": "Herdada do painel. A vitrine é rosa claro e a tela recriada é folha branca sobre ela. Selo e recado sobre o rosa viram papel.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do abrir e fechar a página no céu do login, sempre sob o véu de noite e com a sombra curta no texto branco.",
+      "Do contar cada assunto como um momento: a pergunta no título, a hora em rubrica corrida de rosa forte, a resposta na faixa rosa com o R. em azul marinho.",
+      "Do mostrar o produto como tela recriada em folha branca sobre a vitrine rosa, com legenda que diz que os dados são fictícios.",
+      "Do inverter a ação no céu: botão branco com texto azul marinho, e contorno branco a 60% para a alternativa.",
+      "Do separar recursos e fichas por régua de 1px, sem ícone nem card.",
+      "Do deixar o movimento curto e de saída (`cubic-bezier(0.16, 1, 0.3, 1)`) e desligá-lo com movimento reduzido."
+    ],
+    "donts": [
+      "Don't levar o vídeo, o véu ou a sombra da placa para fora do céu.",
+      "Don't pôr a rubrica ou qualquer rótulo em caixa alta acima de um título.",
+      "Don't usar fileira de cards iguais com ícone para listar recursos. A lista é régua e texto.",
+      "Don't pôr rosa sobre rosa: na vitrine, a tela é folha branca.",
+      "Don't introduzir uma segunda face, uma segunda cor de ação ou um ornamento além da cruz.",
+      "Don't mostrar dado real nas telas recriadas."
+    ]
+  }
+}

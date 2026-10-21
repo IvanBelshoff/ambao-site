@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{width:1440px;height:900px;overflow:hidden;font-family:Inter,sans-serif;color:#111;background:#f8e7ec}
+.folha{position:absolute;inset:40px 72px;background:#fff;display:grid;grid-template-columns:1fr 1fr}
+.folha:after{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px solid #e5e5e5}
+.fita{position:absolute;left:calc(50% + 48px);top:0;width:14px;height:64px;background:#1243a0;clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%)}
+.esq{padding:48px 64px;display:flex;flex-direction:column}
+.dir{padding:48px 64px 48px 96px}
+.marca{display:flex;gap:10px;align-items:center;font-size:11px;font-weight:600;letter-spacing:.16em;color:#1243a0}
+.rubrica{margin-top:72px;font-size:11px;font-weight:600;letter-spacing:.16em;color:#b0566f}
+h1{margin-top:14px;font-size:68px;font-weight:500;letter-spacing:-.035em;line-height:1}
+.sub{margin-top:24px;font-size:19px;line-height:1.6;max-width:500px;color:#111}
+.cta{margin-top:auto;display:flex;gap:12px}
+.b{height:48px;padding:0 22px;border-radius:4px;display:flex;align-items:center;font-size:15px;font-weight:500}
+.bp{background:#1243a0;color:#fff}.bs{border:1px solid #8f8f8f}
+.nota{margin-top:14px;font-size:13px;color:#585858}
+.mom{margin-top:6px;font-size:11px;font-weight:600;letter-spacing:.16em;color:#1243a0}
+h2{margin-top:10px;font-size:22px;font-weight:500;letter-spacing:-.02em}
+.leit{margin-top:14px;font-size:18px;line-height:1.7;max-width:520px}
+.R{margin-top:18px;background:#f8e7ec;border-radius:4px;padding:14px 18px;font-size:18px;line-height:1.45;max-width:520px}
+.R b{color:#1243a0;margin-right:8px}
+.sep{margin:30px 0;border-top:1px solid #e5e5e5;max-width:520px}
+.preces{margin-top:14px;font-size:18px;line-height:1.7;padding-left:24px;max-width:520px}
+.preces li{margin-bottom:6px}
+.preces li::marker{color:#585858}
+</style>
+</head>
+<body>
+<div class="folha">
+  <span class="fita"></span>
+  <section class="esq">
+    <div class="marca"><svg width="12" height="16" viewBox="0 0 24 32" fill="#1243a0"><path d="M9.5 0h5v8H22v5h-7.5v19h-5V13H2V8h7.5z"/></svg>AMBÃO</div>
+    <p class="rubrica">RITOS INICIAIS</p>
+    <h1>Uma paróquia, muitas igrejas, a mesma comunidade.</h1>
+    <p class="sub">O sistema que organiza escalas, dízimo, caixa e avisos de cada igreja, com a paróquia acompanhando tudo.</p>
+    <div class="cta"><span class="b bp">Conversar no WhatsApp</span><span class="b bs">Ler o folheto inteiro</span></div>
+    <p class="nota">Telas com dados fictícios.</p>
+  </section>
+  <section class="dir">
+    <p class="mom">LITURGIA DA PALAVRA</p>
+    <h2>Primeira leitura: a escala de domingo</h2>
+    <p class="leit">Sábado à noite, a coordenação ainda confere no grupo quem vai ler, quem vai cantar e quem trouxe o folheto.</p>
+    <p class="R"><b>R.</b>A escala sai publicada, cada um responde se pode, e quem foi escalado já lê o texto do dia para se preparar.</p>
+    <div class="sep"></div>
+    <p class="mom">PRECES</p>
+    <ol class="preces">
+      <li>Pelo dízimo, que tenha recibo numerado e caia sozinho no caixa.</li>
+      <li>Pela paróquia, que enxergue cada igreja sem lançar no lugar dela.</li>
+      <li>Pelos avisos, que cheguem a quem segue a sua igreja.</li>
+    </ol>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* O fluxo do mapa de acesso do painel: o traço tracejado anda da origem ao destino. */
+.fluxo {
+  animation: marcha 0.9s linear infinite;
+}
+
+@keyframes marcha {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+/*
+ * Com movimento reduzido, o fluxo continua, mais lento: é um traço fino, sem
+ * deslocar nada na tela, e é ele que conta que as partes conversam.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .fluxo {
+    animation-duration: 2.6s;
+  }
+}

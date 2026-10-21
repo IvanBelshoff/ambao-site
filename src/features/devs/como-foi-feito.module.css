@@ -1,0 +1,61 @@
+/* A área de devs: um accordion que abre com altura animada onde o navegador sabe. */
+.dev {
+  interpolate-size: allow-keywords;
+}
+
+.dev::details-content {
+  height: 0;
+  overflow: clip;
+  transition:
+    height 480ms var(--ease-saida),
+    content-visibility 480ms allow-discrete;
+}
+
+.dev[open]::details-content {
+  height: auto;
+}
+
+.resumo {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-radius: var(--radius-field);
+  padding-block: 0.5rem;
+}
+
+.resumo::-webkit-details-marker {
+  display: none;
+}
+
+.seta {
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--color-blue);
+  background: var(--color-pink);
+  transition:
+    transform 320ms var(--ease-saida),
+    background-color 150ms;
+}
+
+.resumo:hover .seta {
+  background: var(--color-blue-wash);
+}
+
+.dev[open] .seta {
+  transform: rotate(90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seta,
+  .dev::details-content {
+    transition: none;
+  }
+}

@@ -1,0 +1,23 @@
+/* A tela nova chega de leve, sem esconder a anterior antes. Roda ao sair de `hidden`. */
+.chegando {
+  animation: tela-chega 280ms var(--ease-saida) both;
+}
+
+@keyframes tela-chega {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chegando {
+    animation: none;
+  }
+}

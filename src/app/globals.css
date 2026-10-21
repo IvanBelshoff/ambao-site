@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+/*
+ * Os mesmos tokens do painel (ambao-web/src/index.css). Mudou lá, mude aqui.
+ * `static` emite todas as variáveis: os CSS Modules das peças leem `var(--color-*)`.
+ */
+@theme static {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Consolas, monospace;
+
+  --color-blue: #1243a0;
+  --color-blue-hover: #0e3680;
+  --color-blue-wash: #eef3fb;
+  --color-pink: #f8e7ec;
+  --color-rose: #d4899e;
+  --color-rose-strong: #b0566f;
+  /* A noite do céu: o fundo do texto sobre o vídeo, o mesmo da placa de entrada. */
+  --color-night: #082040;
+
+  --color-ink: #111111;
+  --color-muted: #585858;
+  --color-field: #8f8f8f;
+  --color-line: #e5e5e5;
+  --color-surface: #fafafa;
+
+  --color-danger: #b3261e;
+  --color-success: #1b6b3a;
+  --color-warning: #8a5a00;
+
+  --radius-field: 4px;
+  --radius-feed: 12px;
+  --tracking-kicker: 0.16em;
+  --text-kicker: 0.6875rem;
+  --text-leitura: 1.125rem;
+  --text-leitura--line-height: 1.7;
+  --shadow-card: 0 24px 60px -20px rgb(9 38 94 / 0.45);
+
+  --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Texto sobre o céu: a mesma sombra curta da entrada do painel. */
+@utility ceu-texto {
+  text-shadow: 0 1px 1px rgb(5 24 64 / 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  scrollbar-color: var(--color-rose) transparent;
+  scrollbar-width: thin;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #fff;
+  caret-color: var(--color-blue);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-pink);
+  color: var(--color-ink);
+}
+
+.no-ceu ::selection {
+  background: #fff;
+  color: var(--color-blue);
+}
+
+/* A placa é papel: dentro dela a seleção volta ao rosa, mesmo sobre o céu. */
+.no-ceu .papel ::selection {
+  background: var(--color-pink);
+  color: var(--color-ink);
+}
+
+/* Campo de texto tem o próprio foco (borda e halo, em components/ui/campo.tsx). */
+:focus-visible:not(input, textarea, select) {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+.no-ceu :focus-visible {
+  outline-color: #fff;
+}
+
+.no-ceu .papel :focus-visible {
+  outline-color: var(--color-blue);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-rose);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

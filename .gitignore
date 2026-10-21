@@ -1,0 +1,40 @@
+# Dependências
+node_modules
+
+# Build e cache do Next.js
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+
+# Testes e logs
+coverage
+*.log
+npm-debug.log*
+
+# Variáveis de ambiente: os valores ficam fora do git; as chaves estão em .env.example
+.env
+.env.*
+!.env.example
+
+# Impeccable: o que é da máquina ou de uma sessão. PRODUCT.md, DESIGN.md, design.json,
+# brief, surfaces e mocks continuam no git.
+.impeccable/config.local.json
+.impeccable/critique
+.impeccable/live
+.impeccable/questions
+.impeccable/review
+
+# Paróquia de demonstração: fotos baixadas, logins locais e capturas que falharam
+ferramentas/demo/fotos/
+ferramentas/demo/logins.json
+public/telas/*.falhou.webp
+
+# Editor e sistema
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+.claude/settings.local.json

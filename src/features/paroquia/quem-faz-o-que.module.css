@@ -1,0 +1,30 @@
+/* No celular, a tabela vira uma lista: o papel em cima, o alcance embaixo. */
+@media (max-width: 639px) {
+  .papeis thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .papeis tr {
+    display: block;
+    padding: 0.875rem 0;
+  }
+
+  .papeis th[scope='row'],
+  .papeis td {
+    display: block;
+    padding: 0;
+  }
+
+  .papeis td {
+    margin-top: 0.25rem;
+    color: var(--color-muted);
+  }
+
+  .papeis tbody {
+    border-top: 1px solid var(--color-line);
+  }
+}
