@@ -50,16 +50,17 @@ export function Telas() {
               Prints do painel funcionando, com a Paróquia Sagrada Família, uma paróquia de demonstração com dados fictícios.
             </p>
           </div>
-          <div className="inline-flex gap-1 rounded-field border border-line bg-white p-1" role="group" aria-label="Ver as telas no">
+          {/* Abaixo de 640px o seletor ocupa a largura e perde os ícones: com eles, passa de 360px. */}
+          <div className="flex w-full gap-1 rounded-field border border-line bg-white p-1 sm:inline-flex sm:w-auto" role="group" aria-label="Ver as telas no">
             {(Object.keys(aparelhos) as Aparelho[]).map((opcao) => (
               <button
                 key={opcao}
                 type="button"
                 aria-pressed={opcao === aparelho}
                 onClick={() => setAparelho(opcao)}
-                className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-field border border-transparent px-4 text-[14px] font-medium text-muted transition-colors duration-150 hover:bg-pink/50 hover:text-blue aria-pressed:border-blue aria-pressed:bg-pink aria-pressed:text-blue"
+                className="inline-flex h-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-field border border-transparent px-2 text-[14px] font-medium text-muted transition-colors duration-150 hover:bg-pink/50 hover:text-blue aria-pressed:border-blue aria-pressed:bg-pink aria-pressed:text-blue sm:flex-none sm:px-4"
               >
-                <Icone nome={aparelhos[opcao].icone} className="h-4 w-4" />
+                <Icone nome={aparelhos[opcao].icone} className="hidden h-4 w-4 sm:block" />
                 {aparelhos[opcao].rotulo}
               </button>
             ))}
