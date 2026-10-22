@@ -21,19 +21,21 @@ npm test
 
 ## Antes de publicar
 
-1. **Contato**: copie `.env.example` para `.env` e preencha `WHATSAPP_NUMBER` (com DDD; o 55 e a máscara são opcionais), `EMAIL_USER`, `PROFILE_LINKEDIN` e `PROFILE_GITHUB` (endereços completos dos perfis). O `.env` fica fora do git; na Vercel, as mesmas variáveis vão em *Settings → Environment Variables*. Um canal vazio esconde o botão dele no site publicado; sem WhatsApp e sem e-mail, o formulário de conversa também some. Canal mal preenchido derruba o build com a mensagem de onde corrigir. Em desenvolvimento, o terminal avisa o que falta.
+1. **Contato**: copie `.env.example` para `.env` e preencha `WHATSAPP_NUMBER` (com DDD; o 55 e a máscara são opcionais), `EMAIL_USER`, `PROFILE_LINKEDIN` e `PROFILE_GITHUB` (endereços completos dos perfis). O `.env` fica fora do git; no GitHub, as mesmas variáveis vão em *Settings → Secrets and variables → Actions → Variables*. Um canal vazio esconde o botão dele no site publicado; sem WhatsApp e sem e-mail, o formulário de conversa também some. Canal mal preenchido derruba o build com a mensagem de onde corrigir. Em desenvolvimento, o terminal avisa o que falta.
 2. **Endereço do site**: ajuste `SITE_URL` em `.env` para o domínio final, sem barra no fim. A prévia do link no LinkedIn usa esse endereço para achar `og.png`.
 3. **Prints**: os de `public/telas/` vêm da paróquia de demonstração. Para refazer depois de uma mudança no painel, siga [ferramentas/demo/README.md](ferramentas/demo/README.md).
 
 Use sempre uma paróquia de demonstração nas capturas. Nada de nome, foto, telefone ou dízimo de pessoa real.
 
-## Publicar na Vercel
+## Publicar no GitHub Pages
 
-1. Suba este repositório para o GitHub.
-2. Na Vercel, importe o repositório. O preset **Next.js** é detectado sozinho e publica o `out/` gerado pelo `output: 'export'`.
-3. Em *Settings → Environment Variables*, cadastre as chaves de `.env.example` com os valores do seu `.env`. Sem elas, o site publicado sai sem os botões de contato.
+O site fica em `https://ambao.silexcode.com.br`. O workflow `.github/workflows/publicar.yml` roda a cada push na `main`: confere tipos, lint e testes, gera o `out/` e publica.
 
-O plano gratuito da Vercel (Hobby) é para uso não comercial. Se o site passar a vender o Ambão, migre para o plano Pro ou para outro serviço estático que permita uso comercial, como o Cloudflare Pages. O site não depende da Vercel: qualquer hospedagem de arquivos estáticos serve o `out/`.
+1. Em *Settings → Pages*, **Source** é **GitHub Actions** e **Custom domain** é `ambao.silexcode.com.br`, com **Enforce HTTPS** marcado.
+2. Em *Settings → Secrets and variables → Actions → Variables*, cadastre as chaves de `.env.example` com os valores do seu `.env`. Sem `SITE_URL`, o build para; sem os canais, o site sai sem os botões de contato. Mudou uma variável: rode o workflow de novo em *Actions → Publicar → Run workflow*.
+3. O DNS está no Registro.br, na zona de `silexcode.com.br`: quatro registros `A` em `ambao` para os IPs do GitHub Pages (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`). O nome `ambao` também tem MX e SPF do e-mail, por isso é `A`, não `CNAME`.
+
+O GitHub Pages serve para apresentar projetos, não para operar um negócio: loja, cobrança ou o próprio SaaS ficam fora dos termos. Se o site passar a vender (preço, plano, cadastro), mude para uma hospedagem que permita uso comercial, como o Cloudflare Pages. O site não depende do GitHub: qualquer hospedagem de arquivos estáticos serve o `out/`.
 
 ## Imagem de compartilhamento
 

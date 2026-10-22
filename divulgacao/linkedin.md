@@ -28,7 +28,7 @@ Montei uma página com as telas (todas com dados fictícios). O link está no pr
 
 ## Primeiro comentário
 
-O site do Ambão, com as telas do sistema: https://ambao-site.vercel.app
+O site do Ambão, com as telas do sistema: https://ambao.silexcode.com.br
 
 ## Para acompanhar o post
 

@@ -25,7 +25,7 @@ Uma paróquia tem várias igrejas, e cada igreja tem a própria operação: caix
 
 ## Operating Context
 
-Site estático (Next.js exportado para arquivos), em português, hospedado na Vercel. Não tem login nem servidor. O contato sai por WhatsApp, e-mail e LinkedIn; o formulário de conversa só monta a mensagem e abre o WhatsApp ou o e-mail da pessoa, sem guardar nada.
+Site estático (Next.js exportado para arquivos), em português, hospedado no GitHub Pages em `ambao.silexcode.com.br`. Não tem login nem servidor. O contato sai por WhatsApp, e-mail e LinkedIn; o formulário de conversa só monta a mensagem e abre o WhatsApp ou o e-mail da pessoa, sem guardar nada.
 
 O sistema apresentado é o painel web (`ambao-web`) e a API (`ambao-backend`). O aplicativo (`ambao-mobile`, React Native com Expo) está em desenvolvimento. Só a área de devs fala dele, sem data nem recurso prometido.
 

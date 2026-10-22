@@ -1,0 +1,59 @@
+# Publica o site no GitHub Pages a cada push na main.
+# Os valores do .env vêm de Settings → Secrets and variables → Actions → Variables.
+name: Publicar
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Um deploy por vez; o que está em andamento termina antes do próximo.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: ${{ vars.SITE_URL }}
+      WHATSAPP_NUMBER: ${{ vars.WHATSAPP_NUMBER }}
+      EMAIL_USER: ${{ vars.EMAIL_USER }}
+      PROFILE_LINKEDIN: ${{ vars.PROFILE_LINKEDIN }}
+      PROFILE_GITHUB: ${{ vars.PROFILE_GITHUB }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # Sem SITE_URL, a prévia do LinkedIn apontaria para localhost.
+      - name: Conferir SITE_URL
+        run: test -n "$SITE_URL" || { echo "::error::Cadastre SITE_URL em Settings → Secrets and variables → Actions → Variables."; exit 1; }
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
