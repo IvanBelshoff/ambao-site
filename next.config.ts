@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
     EMAIL_USER: process.env.EMAIL_USER ?? '',
     PROFILE_LINKEDIN: process.env.PROFILE_LINKEDIN ?? '',
     PROFILE_GITHUB: process.env.PROFILE_GITHUB ?? '',
+    UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID ?? '',
   },
 }
 

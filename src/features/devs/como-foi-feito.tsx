@@ -55,11 +55,11 @@ export function ComoFoiFeito() {
                 <span className="font-medium">Ivan Belshoff</span> <span className="text-muted">· autor do Ambão</span>
               </p>
               <div className="flex flex-wrap gap-2">
-                <LinkContato canal="linkedin" className={classeBotao('contorno')}>
+                <LinkContato canal="linkedin" local="devs" className={classeBotao('contorno')}>
                   <LogoLinkedin />
                   LinkedIn
                 </LinkContato>
-                <LinkContato canal="github" className={classeBotao('contorno')}>
+                <LinkContato canal="github" local="devs" className={classeBotao('contorno')}>
                   <LogoGithub />
                   GitHub
                 </LinkContato>

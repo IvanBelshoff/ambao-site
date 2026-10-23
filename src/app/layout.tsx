@@ -3,8 +3,10 @@ import '@fontsource/inter/500.css'
 import '@fontsource/inter/600.css'
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import type { ReactNode } from 'react'
 import { preload } from 'react-dom'
+import { umamiId } from '@/config/umami'
 
 const descricao =
   'Escalas, dízimo, caixa e avisos de cada igreja num só lugar, com a paróquia acompanhando tudo de perto.'
@@ -44,6 +46,15 @@ export default function Layout({ children }: { children: ReactNode }) {
           Pular para o conteúdo
         </a>
         {children}
+        {/* Só o domínio do SITE_URL conta: o localhost do `npm run dev` não entra nos números. */}
+        {umamiId && (
+          <Script
+            src="https://cloud.umami.is/script.js"
+            data-website-id={umamiId}
+            data-domains={new URL(siteUrl).hostname}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   )

@@ -26,6 +26,7 @@ jobs:
       EMAIL_USER: ${{ vars.EMAIL_USER }}
       PROFILE_LINKEDIN: ${{ vars.PROFILE_LINKEDIN }}
       PROFILE_GITHUB: ${{ vars.PROFILE_GITHUB }}
+      UMAMI_WEBSITE_ID: ${{ vars.UMAMI_WEBSITE_ID }}
     steps:
       - uses: actions/checkout@v4
 

@@ -23,7 +23,8 @@ npm test
 
 1. **Contato**: copie `.env.example` para `.env` e preencha `WHATSAPP_NUMBER` (com DDD; o 55 e a máscara são opcionais), `EMAIL_USER`, `PROFILE_LINKEDIN` e `PROFILE_GITHUB` (endereços completos dos perfis). O `.env` fica fora do git; no GitHub, as mesmas variáveis vão em *Settings → Secrets and variables → Actions → Variables*. Um canal vazio esconde o botão dele no site publicado; sem WhatsApp e sem e-mail, o formulário de conversa também some. Canal mal preenchido derruba o build com a mensagem de onde corrigir. Em desenvolvimento, o terminal avisa o que falta.
 2. **Endereço do site**: ajuste `SITE_URL` em `.env` para o domínio final, sem barra no fim. A prévia do link no LinkedIn usa esse endereço para achar `og.png`.
-3. **Prints**: os de `public/telas/` vêm da paróquia de demonstração. Para refazer depois de uma mudança no painel, siga [ferramentas/demo/README.md](ferramentas/demo/README.md).
+3. **Contagem de visitas**: crie o site em [cloud.umami.is](https://cloud.umami.is) com o domínio de `SITE_URL` e copie o *Website ID* para `UMAMI_WEBSITE_ID`. O Umami conta visitas, origem e os cliques de contato (`contato-whatsapp`, `contato-email`, `contato-linkedin`, `contato-github`, com o `local` do botão) e o envio do formulário (`formulario-enviado`, com o `canal`). Não usa cookie e não recebe nome, paróquia nem mensagem. Vazio desliga: o script nem entra na página.
+4. **Prints**: os de `public/telas/` vêm da paróquia de demonstração. Para refazer depois de uma mudança no painel, siga [ferramentas/demo/README.md](ferramentas/demo/README.md).
 
 Use sempre uma paróquia de demonstração nas capturas. Nada de nome, foto, telefone ou dízimo de pessoa real.
 

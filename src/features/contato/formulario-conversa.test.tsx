@@ -79,6 +79,21 @@ describe('FormularioConversa', () => {
     expect(await screen.findByRole('button', { name: 'Mensagem copiada' })).toBeInTheDocument()
   })
 
+  it('conta no Umami só o canal, e só depois de validar', async () => {
+    const track = vi.fn()
+    window.umami = { track }
+    vi.spyOn(window, 'open').mockReturnValue(null)
+    render(<FormularioConversa canais={canais} producao />)
+
+    await userEvent.click(screen.getByRole('button', { name: 'Abrir no WhatsApp' }))
+    expect(track).not.toHaveBeenCalled()
+
+    await preencher()
+    await userEvent.click(screen.getByRole('button', { name: 'Abrir no WhatsApp' }))
+    expect(track).toHaveBeenCalledExactlyOnceWith('formulario-enviado', { canal: 'whatsapp' })
+    delete window.umami
+  })
+
   it('some quando não há WhatsApp nem e-mail no site publicado', () => {
     const { container } = render(<FormularioConversa canais={{ ...canais, whatsapp: '', email: '' }} producao />)
     expect(container).toBeEmptyDOMElement()

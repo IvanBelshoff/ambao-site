@@ -17,6 +17,7 @@ export function Rodape() {
           {/* Só o símbolo: o nome vem no rótulo, para leitor de tela e ao parar o mouse. */}
           <LinkContato
             canal="github"
+            local="rodape"
             rotulo="GitHub de Ivan Belshoff"
             className="-m-2 flex size-10 items-center justify-center rounded-field text-muted transition-colors duration-150 hover:bg-pink hover:text-blue"
           >

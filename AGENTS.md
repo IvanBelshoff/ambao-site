@@ -31,4 +31,5 @@ A mesma do painel: azul marinho, rosa claro, branco, Inter e a cruz como único 
 - Azul marinho é a única cor de ação. Nunca dois botões cheios lado a lado.
 - Os números das telas recriadas batem entre si: dízimo e caixa vêm de `src/dados/financeiro-demo.ts`, com teste.
 - O formulário de contato só monta a mensagem e abre o WhatsApp ou o e-mail. Nada vai para servidor.
+- A única coisa que sai do navegador é a contagem do Umami (`UMAMI_WEBSITE_ID`, em `src/config/umami.ts`): visitas e eventos de contato por `src/lib/rastrear.ts` e `data-umami-event`. Evento nunca leva nome, paróquia, cidade nem mensagem.
 - Canal de contato vazio esconde o botão no site publicado. Os canais vêm do `.env` (`WHATSAPP_NUMBER`, `EMAIL_USER`, `PROFILE_LINKEDIN`, `PROFILE_GITHUB`), lidos e validados com Zod em `src/config/contato.ts` e levados ao navegador pelo `env` de `next.config.ts`.

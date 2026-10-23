@@ -71,7 +71,7 @@ export function Navegacao() {
             </a>
           ))}
         </nav>
-        <LinkContato canal="whatsapp" className={estilo.acao}>
+        <LinkContato canal="whatsapp" local="topo" className={estilo.acao}>
           <LogoWhatsapp />
           <span>WhatsApp</span>
         </LinkContato>

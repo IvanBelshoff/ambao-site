@@ -8,6 +8,7 @@ import { Botao } from '@/components/ui/botao'
 import { AreaDeTexto, Campo } from '@/components/ui/campo'
 import { Icone } from '@/components/ui/icone'
 import { LogoWhatsapp } from '@/components/ui/marcas'
+import { rastrear } from '@/lib/rastrear'
 import { LIMITE_MAILTO, assuntoEmail, canaisDoFormulario, linkEmail, linkWhatsapp } from './canais'
 import { type Conversa, LIMITE_MENSAGEM, conversaSchema, conversaVazia, montarMensagem } from './conversa'
 
@@ -53,6 +54,8 @@ export function FormularioConversa({
         setAviso(`Preencha ${canal === 'whatsapp' ? 'o WhatsApp' : 'o e-mail'} em src/config/contato.ts.`)
         return
       }
+      // Só o canal: nome, paróquia e mensagem não saem do navegador.
+      rastrear('formulario-enviado', { canal })
       const texto = montarMensagem(dados)
       const url = canal === 'whatsapp' ? linkWhatsapp(endereco, texto) : linkEmail(endereco, assuntoEmail, texto)
       setAberto({ canal, url, texto, longo: canal === 'email' && url.length > LIMITE_MAILTO })
