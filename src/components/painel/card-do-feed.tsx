@@ -18,7 +18,7 @@ export function CardDoFeed({
   children?: ReactNode
 }) {
   return (
-    <article className={`rounded-feed border border-line bg-white px-5 py-4 ${className}`}>
+    <article className={`rounded-feed border border-line bg-paper px-5 py-4 ${className}`}>
       <div className="flex items-center gap-3">
         {avatar}
         <span className="min-w-0 flex-1">

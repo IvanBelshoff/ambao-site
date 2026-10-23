@@ -17,7 +17,7 @@ export function TelaCalendario() {
         {semana.map((dia, indice) => {
           const eHoje = dia.dia === hoje.dia && dia.mes === hoje.mes
           const eAberto = dia.dia === aberto.dia && dia.mes === aberto.mes
-          const disco = eAberto ? 'bg-blue text-white' : eHoje ? 'text-blue ring-1 ring-blue ring-inset' : dia.dia < hoje.dia ? 'text-muted' : ''
+          const disco = eAberto ? 'bg-action text-on-action' : eHoje ? 'text-blue ring-1 ring-blue ring-inset' : dia.dia < hoje.dia ? 'text-muted' : ''
           return (
             <li key={dia.dia} className="flex flex-col items-center gap-1">
               <span className="text-[11px] text-muted">{nomes[indice]}</span>

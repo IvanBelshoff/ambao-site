@@ -27,6 +27,16 @@
   --color-success: #1b6b3a;
   --color-warning: #8a5a00;
 
+  /* Papéis que mudam no tema escuro. No claro, repetem o branco e o azul. */
+  --color-page: #ffffff;
+  /* Papel: placa, card, campo e faixa que no claro são brancos. */
+  --color-paper: #ffffff;
+  /* Azul como fundo (botão, disco, folhinha) e o texto em cima dele. */
+  --color-action: #1243a0;
+  --color-action-hover: #0e3680;
+  --color-on-action: #ffffff;
+  --color-danger-action: #b3261e;
+
   --radius-field: 4px;
   --radius-feed: 12px;
   --tracking-kicker: 0.16em;
@@ -36,6 +46,55 @@
   --shadow-card: 0 24px 60px -20px rgb(9 38 94 / 0.45);
 
   --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/*
+ * Tema escuro, os mesmos valores do painel (ambao-web/src/index.css). O céu, o véu e o
+ * branco sobre o céu não mudam. `data-theme` vem do script do layout e de src/lib/tema.ts.
+ */
+@media screen {
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+
+    --color-page: #0f131b;
+    --color-paper: #161b26;
+    --color-surface: #0c1016;
+
+    --color-ink: #e8eaf0;
+    --color-muted: #a2a9b8;
+    --color-field: #6b7385;
+    --color-line: #2a3142;
+
+    --color-blue: #8fb1f4;
+    --color-blue-hover: #a9c3f7;
+    --color-blue-wash: #18233a;
+    --color-action: #2a56b4;
+    --color-action-hover: #3463c6;
+    --color-on-action: #ffffff;
+
+    --color-pink: #3a2632;
+    --color-rose: #d4899e;
+    --color-rose-strong: #e08aa2;
+
+    --color-danger: #f0857b;
+    --color-danger-action: #c4372e;
+    --color-success: #6fcf97;
+    --color-warning: #e6b24f;
+    --shadow-card: 0 24px 60px -20px rgb(0 0 0 / 0.6);
+  }
+}
+
+/* Troca de tema: a página velha se dissolve na nova no tempo da emenda do céu, como no painel. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 1200ms;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Imagem com versão por tema (as capturas do painel): só a do tema aparece. */
+:root[data-theme='dark'] .so-claro,
+:root:not([data-theme='dark']) .so-escuro {
+  display: none;
 }
 
 @utility tabular {
@@ -59,7 +118,7 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background: #fff;
+  background: var(--color-page);
   caret-color: var(--color-blue);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

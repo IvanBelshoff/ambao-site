@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic'
 import { type MouseEvent, useState } from 'react'
 import { Icone } from '@/components/ui/icone'
+import { useTemaResolvido } from '@/lib/tema'
 import { type Aparelho, aparelhos, arquivoDaCaptura, capturas } from './capturas'
 
 /** O visor só baixa quando alguém abre um print. */
@@ -23,9 +24,10 @@ export function Telas() {
   const [aparelho, setAparelho] = useState<Aparelho>('desktop')
   const [aberta, setAberta] = useState<number | null>(null)
   const { largura, altura } = aparelhos[aparelho]
+  const escuro = useTemaResolvido() === 'escuro'
 
   const slides = capturas.map((captura) => ({
-    src: arquivoDaCaptura(captura.tela, aparelho),
+    src: arquivoDaCaptura(captura.tela, aparelho, escuro),
     width: largura,
     height: altura,
     alt: `Print do painel: ${captura.titulo.toLowerCase()}, com dados fictícios`,
@@ -51,7 +53,7 @@ export function Telas() {
             </p>
           </div>
           {/* Abaixo de 640px o seletor ocupa a largura e perde os ícones: com eles, passa de 360px. */}
-          <div className="flex w-full gap-1 rounded-field border border-line bg-white p-1 sm:inline-flex sm:w-auto" role="group" aria-label="Ver as telas no">
+          <div className="flex w-full gap-1 rounded-field border border-line bg-paper p-1 sm:inline-flex sm:w-auto" role="group" aria-label="Ver as telas no">
             {(Object.keys(aparelhos) as Aparelho[]).map((opcao) => (
               <button
                 key={opcao}
@@ -78,16 +80,26 @@ export function Telas() {
                   rel="noopener"
                   onClick={abrir(indice)}
                   aria-label={`Ampliar: ${captura.titulo}`}
-                  className="block cursor-zoom-in overflow-hidden rounded-field border border-line bg-white transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-blue/40"
+                  className="block cursor-zoom-in overflow-hidden rounded-field border border-line bg-paper transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-blue/40"
                 >
+                  {/* As duas versões no HTML estático; o CSS mostra a do tema, e a escondida não baixa. */}
                   <img
-                    src={slide.src}
+                    src={arquivoDaCaptura(captura.tela, aparelho)}
                     width={largura}
                     height={altura}
                     alt={slide.alt}
                     loading="lazy"
                     decoding="async"
-                    className="block h-auto w-full"
+                    className="so-claro block h-auto w-full"
+                  />
+                  <img
+                    src={arquivoDaCaptura(captura.tela, aparelho, true)}
+                    width={largura}
+                    height={altura}
+                    alt={slide.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="so-escuro block h-auto w-full"
                   />
                 </a>
                 <figcaption className="mt-3 text-[14px] text-pretty text-muted">

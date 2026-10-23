@@ -44,7 +44,7 @@ export function Paroquia() {
                   </Disco>
                   <span className="min-w-0 flex-1 text-[15px]">{igreja.nome}</span>
                   {igreja.matriz ? (
-                    <span className="rounded-full border border-line bg-white px-2 py-0.5 text-[12px] font-medium text-blue">Matriz</span>
+                    <span className="rounded-full border border-line bg-paper px-2 py-0.5 text-[12px] font-medium text-blue">Matriz</span>
                   ) : null}
                 </li>
               ))}

@@ -79,11 +79,11 @@ function QuemVe() {
     <div className="mt-4 rounded-field bg-pink p-4">
       <p className="text-[13px] font-medium">Ao publicar, a igreja escolhe quem vê</p>
       <div className="mt-2 grid grid-cols-2 gap-2 text-[14px]">
-        <span className="flex min-h-11 items-center gap-2 rounded-field bg-white px-3 font-medium text-blue ring-1 ring-blue/40">
+        <span className="flex min-h-11 items-center gap-2 rounded-field bg-paper px-3 font-medium text-blue ring-1 ring-blue/40">
           <Icone nome="check" className="h-4 w-4" />
           Só a igreja
         </span>
-        <span className="flex min-h-11 items-center rounded-field bg-white px-3">Paróquia toda</span>
+        <span className="flex min-h-11 items-center rounded-field bg-paper px-3">Paróquia toda</span>
       </div>
     </div>
   )

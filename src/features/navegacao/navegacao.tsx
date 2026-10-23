@@ -6,6 +6,7 @@ import { LogoWhatsapp } from '@/components/ui/marcas'
 import { Marca } from '@/components/ui/marca'
 import { LinkContato } from '@/features/contato/link-contato'
 import estilo from './navegacao.module.css'
+import { TrocaTema } from './troca-tema'
 import { useRolagem } from './use-rolagem'
 import { useSecaoAtiva } from './use-secao-ativa'
 
@@ -71,10 +72,14 @@ export function Navegacao() {
             </a>
           ))}
         </nav>
-        <LinkContato canal="whatsapp" local="topo" className={estilo.acao}>
-          <LogoWhatsapp />
-          <span>WhatsApp</span>
-        </LinkContato>
+        <div className="flex shrink-0 items-center gap-1">
+          <LinkContato canal="whatsapp" local="topo" className={estilo.acao}>
+            <LogoWhatsapp />
+            {/* De 1024 a 1399px as dez âncoras e a troca de tema ocupam a barra: o botão fica só com o logo. */}
+            <span className="lg:max-[87.5rem]:sr-only">WhatsApp</span>
+          </LinkContato>
+          <TrocaTema />
+        </div>
       </div>
     </header>
   )

@@ -36,7 +36,7 @@ export function Leitura() {
                   </li>
                 ))}
               </ol>
-              <span className="mt-5 flex h-11 w-full items-center justify-center rounded-field bg-blue text-[15px] font-medium text-white">
+              <span className="mt-5 flex h-11 w-full items-center justify-center rounded-field bg-action text-[15px] font-medium text-on-action">
                 Marcar como lida
               </span>
               <p className="mt-2 text-[13px] text-muted">Marca sozinho ao chegar ao fim.</p>

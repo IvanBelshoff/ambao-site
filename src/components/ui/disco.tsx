@@ -9,7 +9,7 @@ const tamanhos = {
 const tons = {
   lavado: 'bg-blue-wash text-blue',
   rosa: 'bg-pink text-blue',
-  azul: 'bg-blue text-white',
+  azul: 'bg-action text-on-action',
 } as const
 
 /** O disco de iniciais do painel. Com a cruz dentro, é a paróquia. */

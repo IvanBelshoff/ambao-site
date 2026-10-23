@@ -25,6 +25,6 @@ export const leiturasDeHoje = [
 ]
 
 export const estiloDoDia = {
-  lido: 'bg-blue font-medium text-white',
+  lido: 'bg-action font-medium text-on-action',
   hoje: 'font-medium text-blue ring-1 ring-blue ring-inset',
 } as const

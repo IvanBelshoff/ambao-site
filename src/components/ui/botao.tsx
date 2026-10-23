@@ -5,9 +5,9 @@ import type { ComponentProps } from 'react'
  * no papel, o azul cheio e o contorno em fio de campo. Nunca dois cheios lado a lado.
  */
 const variantes = {
-  ceu: 'h-12 gap-2 bg-white px-5 text-blue hover:bg-pink',
+  ceu: 'h-12 gap-2 bg-white px-5 text-action hover:bg-pink',
   'ceu-contorno': 'h-12 gap-2 px-5 text-white ring-1 ring-white/60 ring-inset hover:bg-white/12',
-  primario: 'h-11 gap-2 bg-blue px-5 text-white hover:bg-blue-hover',
+  primario: 'h-11 gap-2 bg-action px-5 text-on-action hover:bg-action-hover',
   contorno: 'h-11 gap-2 px-4 text-ink ring-1 ring-field ring-inset hover:bg-pink hover:text-blue',
 } as const
 

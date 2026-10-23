@@ -6,9 +6,9 @@ Site público do Ambão: apresenta o sistema a outras paróquias e serve de port
 
 ```bash
 npm install
-npm run dev         # http://localhost:3000
+npm run dev         # http://localhost:3001 (a 3000 é da API)
 npm run build       # gera out/
-npm run preview     # serve o out/
+npm run preview     # serve o out/ em http://localhost:3001
 ```
 
 ## Conferir

@@ -3,6 +3,9 @@
  * celular, e grava em public/telas/. Precisa do painel (ambao-web) e da API de
  * demonstração de pé, e do Chrome instalado.
  *
+ * Cada tela sai duas vezes: no tema claro e no escuro (`-escuro.webp`), com o aparelho
+ * emulado em cada modo. As contas da demonstração ficam em Automático e seguem o aparelho.
+ *
  * Uso: npm run capturas
  * Variáveis: AMBAO_PAINEL (padrão http://localhost:5180), CHROME (caminho do Chrome).
  */
@@ -37,6 +40,12 @@ const TELAS = [
 
 const pausa = (ms) => new Promise((r) => setTimeout(r, ms))
 
+/** Os dois temas do painel. O sufixo vai no nome do arquivo; o claro fica sem sufixo. */
+const TEMAS = [
+  { esquema: 'light', sufixo: '' },
+  { esquema: 'dark', sufixo: '-escuro' },
+]
+
 async function entrar(pagina, email) {
   await pagina.goto(`${PAINEL}/login`, { waitUntil: 'domcontentloaded' })
   await pagina.waitForSelector('#email')
@@ -50,28 +59,33 @@ async function main() {
   mkdirSync(SAIDA, { recursive: true })
   const navegador = await puppeteer.launch({ executablePath: CHROME, headless: true })
   const filtro = process.argv[2]
-  for (const [aparelho, tamanho] of Object.entries(APARELHOS)) {
-    for (const quem of new Set(TELAS.map((t) => t.quem))) {
-      const contexto = await navegador.createBrowserContext()
-      const pagina = await contexto.newPage()
-      await pagina.setViewport({ ...tamanho, deviceScaleFactor: 2, hasTouch: tamanho.isMobile })
-      await pagina.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }])
-      await entrar(pagina, quem)
-      for (const tela of TELAS.filter((t) => t.quem === quem && (!filtro || t.nome === filtro))) {
-        const arquivo = join(SAIDA, `${tela.nome}-${aparelho}.webp`)
-        try {
-          await pagina.goto(`${PAINEL}${tela.caminho}`, { waitUntil: 'domcontentloaded' })
-          await pagina.waitForFunction((texto) => document.body.innerText.includes(texto), { timeout: 15000 }, tela.espera)
-          await pagina.evaluate(() => document.fonts.ready)
-          await pausa(900)
-          await pagina.screenshot({ path: arquivo, type: 'webp', quality: 88 })
-          console.log('ok', `${tela.nome}-${aparelho}.webp`)
-        } catch (erro) {
-          await pagina.screenshot({ path: arquivo.replace('.webp', '.falhou.webp'), type: 'webp', quality: 60 })
-          console.warn('falhou', `${tela.nome}-${aparelho}:`, erro.message)
+  for (const tema of TEMAS) {
+    for (const [aparelho, tamanho] of Object.entries(APARELHOS)) {
+      for (const quem of new Set(TELAS.map((t) => t.quem))) {
+        const contexto = await navegador.createBrowserContext()
+        const pagina = await contexto.newPage()
+        await pagina.setViewport({ ...tamanho, deviceScaleFactor: 2, hasTouch: tamanho.isMobile })
+        await pagina.emulateMediaFeatures([
+          { name: 'prefers-reduced-motion', value: 'reduce' },
+          { name: 'prefers-color-scheme', value: tema.esquema },
+        ])
+        await entrar(pagina, quem)
+        for (const tela of TELAS.filter((t) => t.quem === quem && (!filtro || t.nome === filtro))) {
+          const arquivo = join(SAIDA, `${tela.nome}-${aparelho}${tema.sufixo}.webp`)
+          try {
+            await pagina.goto(`${PAINEL}${tela.caminho}`, { waitUntil: 'domcontentloaded' })
+            await pagina.waitForFunction((texto) => document.body.innerText.includes(texto), { timeout: 15000 }, tela.espera)
+            await pagina.evaluate(() => document.fonts.ready)
+            await pausa(900)
+            await pagina.screenshot({ path: arquivo, type: 'webp', quality: 88 })
+            console.log('ok', `${tela.nome}-${aparelho}${tema.sufixo}.webp`)
+          } catch (erro) {
+            await pagina.screenshot({ path: arquivo.replace('.webp', '.falhou.webp'), type: 'webp', quality: 60 })
+            console.warn('falhou', `${tela.nome}-${aparelho}:`, erro.message)
+          }
         }
+        await contexto.close()
       }
-      await contexto.close()
     }
   }
   await navegador.close()

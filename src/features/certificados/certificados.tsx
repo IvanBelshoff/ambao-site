@@ -66,9 +66,9 @@ export function Passo({ certificado }: { certificado: CertificadoDemo }) {
       {dia ? (
         <span
           aria-hidden
-          className="relative flex w-11 shrink-0 flex-col items-center self-start overflow-hidden rounded-field border border-blue/25 bg-white text-center"
+          className="relative flex w-11 shrink-0 flex-col items-center self-start overflow-hidden rounded-field border border-blue/25 bg-paper text-center"
         >
-          <span className="w-full bg-blue py-px text-[10px] font-semibold tracking-[0.12em] text-white uppercase">
+          <span className="w-full bg-action py-px text-[10px] font-semibold tracking-[0.12em] text-on-action uppercase">
             {dia.mes}
           </span>
           <span className="tabular pt-1 text-[17px] leading-none font-medium">{dia.dia}</span>
@@ -107,13 +107,13 @@ export function Passo({ certificado }: { certificado: CertificadoDemo }) {
               ))}
             </dl>
           ) : null}
-          <span className="mt-2.5 inline-flex h-8 items-center gap-1.5 rounded-field border border-field bg-white px-2.5 text-[13px] font-medium sm:hidden">
+          <span className="mt-2.5 inline-flex h-8 items-center gap-1.5 rounded-field border border-field bg-paper px-2.5 text-[13px] font-medium sm:hidden">
             <Icone nome="baixar" className="h-3.5 w-3.5" />
             Abrir {certificado.arquivo === 'PDF' ? 'PDF' : 'imagem'}
           </span>
         </div>
         <div className="hidden shrink-0 flex-col items-end gap-1.5 sm:flex">
-          <span className="inline-flex h-8 items-center gap-1.5 rounded-field border border-field bg-white px-2.5 text-[13px] font-medium">
+          <span className="inline-flex h-8 items-center gap-1.5 rounded-field border border-field bg-paper px-2.5 text-[13px] font-medium">
             <Icone nome="baixar" className="h-3.5 w-3.5" />
             Abrir
           </span>
@@ -130,7 +130,7 @@ function DaSecretaria() {
     <Folha>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-[13px] text-muted">Certificados · paróquia</p>
-        <span className="inline-flex h-9 items-center gap-1.5 rounded-field bg-blue px-3 text-[13px] font-medium text-white">
+        <span className="inline-flex h-9 items-center gap-1.5 rounded-field bg-action px-3 text-[13px] font-medium text-on-action">
           <span aria-hidden>+</span> Novo certificado
         </span>
       </div>
@@ -154,7 +154,7 @@ function DaSecretaria() {
               {item.iniciais}
             </Disco>
             <span className="min-w-0 flex-1 truncate text-[14px] font-medium">{item.pessoa}</span>
-            <span className="rounded-full bg-white px-2 py-0.5 text-[11px] font-medium text-blue ring-1 ring-blue/25 ring-inset">
+            <span className="rounded-full bg-paper px-2 py-0.5 text-[11px] font-medium text-blue ring-1 ring-blue/25 ring-inset">
               {item.tipo}
             </span>
             <span className="tabular hidden w-[5.5rem] text-right text-[13px] text-muted sm:block">{item.data}</span>

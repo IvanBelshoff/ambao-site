@@ -28,7 +28,7 @@ export function Calendario() {
             <p className="text-[13px] text-muted">Calendário</p>
             <h3 className="mt-1 text-[1.25rem] leading-tight font-medium tracking-tight">19 de outubro a 8 de novembro</h3>
             <div className="-mx-1 mt-4 overflow-x-auto px-1 pb-0.5 [scrollbar-width:none]">
-              <div className="inline-flex rounded-field border border-line bg-white p-1">
+              <div className="inline-flex rounded-field border border-line bg-paper p-1">
                 {filtros.map((filtro, indice) => (
                   <span
                     key={filtro}
@@ -91,7 +91,7 @@ function Celula({ dia }: { dia: Dia }) {
   const eAberto = dia.mes === aberto.mes && dia.dia === aberto.dia
   const passado = dia.mes === 'out' && dia.dia < hoje.dia
   const disco = eAberto
-    ? 'bg-blue text-white'
+    ? 'bg-action text-on-action'
     : eHoje
       ? 'text-blue ring-1 ring-blue ring-inset'
       : passado
@@ -99,7 +99,7 @@ function Celula({ dia }: { dia: Dia }) {
         : 'text-ink'
 
   return (
-    <div className="flex h-14 min-w-0 flex-col items-center bg-white pt-1 sm:h-auto sm:min-h-[5.25rem] sm:items-stretch sm:p-1">
+    <div className="flex h-14 min-w-0 flex-col items-center bg-paper pt-1 sm:h-auto sm:min-h-[5.25rem] sm:items-stretch sm:p-1">
       <span className={`tabular flex size-8 items-center justify-center rounded-full text-[13px] font-medium sm:size-7 ${disco}`}>
         {dia.dia}
         {eHoje ? <span className="sr-only">, hoje</span> : null}

@@ -60,7 +60,7 @@ describe('FormularioConversa', () => {
     expect(screen.queryByRole('button', { name: 'Abrir no WhatsApp' })).not.toBeInTheDocument()
     const email = screen.getByRole('button', { name: 'Abrir no e-mail' })
     expect(email).toHaveAttribute('type', 'submit')
-    expect(email.className).toContain('bg-blue')
+    expect(email.className).toContain('bg-action')
   })
 
   it('no e-mail, oferece copiar a mensagem e escrever direto', async () => {

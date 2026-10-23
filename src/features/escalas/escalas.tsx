@@ -56,7 +56,7 @@ function EscalaDaCelebracao() {
         >
           <span className="bg-success" style={{ flex: aceitaram }} />
           <span className="bg-warning" style={{ flex: semResposta }} />
-          <span className="bg-danger" style={{ flex: recusaram }} />
+          <span className="bg-danger-action" style={{ flex: recusaram }} />
         </div>
         <p className="tabular mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[13px] text-muted">
           <span>

@@ -77,7 +77,7 @@ export function FormularioConversa({
       noValidate
       onSubmit={abrir(principal)}
       aria-labelledby="conversa-titulo"
-      className="papel rounded-field bg-white p-5 text-ink shadow-card ring-1 ring-white/35 [text-shadow:none] sm:p-7"
+      className="papel rounded-field bg-paper p-5 text-ink shadow-card ring-1 ring-white/35 [text-shadow:none] sm:p-7"
     >
       <h3 id="conversa-titulo" className="text-[1.25rem] leading-tight font-medium tracking-tight">
         Conte um pouco da sua paróquia

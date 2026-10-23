@@ -1,6 +1,6 @@
 ---
 name: Ambão (site)
-description: A entrada do Ambão. O céu do login abre e fecha a página; no meio, um folheto dominical em papel branco e rosa claro.
+description: A entrada do Ambão. O céu do login abre e fecha a página; no meio, um folheto dominical em papel branco e rosa claro, ou azul-noite e rosa noturno no tema escuro.
 colors:
   azul-marinho: "#1243a0"
   azul-marinho-hover: "#0e3680"
@@ -223,6 +223,17 @@ A paleta é a do painel, com uma cor nova: a noite do céu.
 - **Superfície** (`{colors.superficie}`): a pílula "Dados fictícios" na placa e o fundo da seção de capturas.
 - **Perigo, Sucesso, Aviso**: os mesmos estados do painel, só dentro das telas recriadas.
 
+### Tema escuro
+
+O mesmo do painel (`ambao-web/DESIGN.md`, seção Tema escuro), com os mesmos valores em `src/app/globals.css`: o `@theme` traz o claro e `:root[data-theme='dark']`, dentro de `@media screen`, troca só os valores. O papel vira azul-noite (`paper` #161b26 sobre `page` #0f131b), o rosa claro vira rosa noturno #3a2632, e o azul se divide em `blue` (texto, foco, #8fb1f4) e `action` (fundo de botão, #2a56b4, texto `on-action` branco).
+
+- **O céu segue o tema, como no painel:** o mar de dia no claro, o céu estrelado sobre a serra no escuro (`public/ceu-noite.mp4`, o mesmo arquivo do painel, com `public/ceu-noite.jpg` parada enquanto carrega). O HTML estático leva os dois céus; `.so-claro` e `.so-escuro` mostram o do tema já na primeira pintura, e só o vídeo do tema na tela é baixado (`components/ceu`). Na abertura e no fechamento.
+- **Troca suave:** trocar de tema dissolve a página inteira, céu incluído, em 1200ms, o tempo da emenda do céu (View Transitions, `aplicarSuave` em `src/lib/tema.ts`, e `::view-transition` em `app/globals.css`). Vale também com movimento reduzido, porque é só opacidade; sem a API do navegador ou com a aba escondida, a troca é direta.
+- **O que não muda:** o véu e o branco sobre o céu. O botão branco do céu continua branco, com o texto em `action`, que lê no branco nos dois temas.
+- **Quem decide:** sem escolha, o aparelho. O menu da navegação oferece Claro, Escuro e Automático e guarda `claro`, `escuro` ou `sistema` em `localStorage` (`ambao_tema`, a mesma chave e os mesmos valores do painel); Automático volta a seguir o aparelho. O script do `<head>` (`src/lib/tema-script.ts`) marca `data-theme` antes da primeira pintura.
+- **Capturas do painel:** cada print tem a versão escura (`<tela>-<aparelho>-escuro.webp`). As duas vão no HTML; o CSS (`.so-claro`, `.so-escuro`) mostra a do tema, e a escondida não baixa. O visor abre a do tema.
+- **Papel:** superfície é `bg-paper`, nunca `bg-white`. `white` fica para o que está sobre o céu.
+
 ### Named Rules
 
 **The One Voice Rule.** Herdada do painel. Azul marinho é a única cor de ação. No céu, a ação é o branco com texto azul marinho; no papel, é o azul cheio. Nunca os dois botões cheios lado a lado.
@@ -308,7 +319,7 @@ O canto é o do campo, 4px, em botão, aba, placa, faixa da resposta, vitrine, f
 
 ### Navigation
 
-- **No céu:** 80px de altura, na medida da página. Cruz e AMBÃO à esquerda; no meio, uma âncora por momento, na ordem da página e com rótulo de uma palavra (Escalas, Música, Calendário, Leitura, Dízimo, Avisos, Acervo, Certificados, Paróquia, Telas) e o ícone de traço de 16px do módulo à esquerda, em 14px médio, 8px de respiro em cima e 6px de lado, sem vão entre elas (com dez âncoras, é o que faz o botão caber em 1024, 1280 e a partir de 1400px), branco a 90%, hover lava branco a 12%; à direita, "WhatsApp" em botão branco com o logo do WhatsApp, em todas as larguras. Abaixo de 1024px, só a marca e o botão. De 1024 a 1279px, as âncoras ficam sem ícone.
+- **No céu:** 80px de altura, na medida da página. Cruz e AMBÃO à esquerda; no meio, uma âncora por momento, na ordem da página e com rótulo de uma palavra (Escalas, Música, Calendário, Leitura, Dízimo, Avisos, Acervo, Certificados, Paróquia, Telas) e o ícone de traço de 16px do módulo à esquerda, em 14px médio, 8px de respiro em cima e 6px de lado, sem vão entre elas (com dez âncoras, é o que faz o botão caber em 1024, 1280 e a partir de 1400px), branco a 90%, hover lava branco a 12%; à direita, a troca de tema (só o ícone, 44px, com o da escolha atual: sol no claro, lua no escuro e o círculo meio cheio no automático, com o nome "Tema: Claro", "Tema: Escuro" ou "Tema: Automático"; branca a 90% sobre o céu, tinta suave na placa, hover como o das âncoras e o mesmo fundo enquanto o menu está aberto). O clique abre, embaixo e alinhado à direita, o menu das três escolhas como os do painel: papel com fio, canto de campo, 4px de respiro, a sombra curta da navegação e a entrada de 140ms. Cada item tem 44px, ícone de 16px e rótulo em 14px; o escolhido fica em azul marinho, médio, com o check à direita; hover e foco em rosa claro com texto azul marinho. Setas, Home e End andam, Esc fecha e devolve o foco ao botão e "WhatsApp" em botão branco com o logo do WhatsApp. Abaixo de 1024px, só a marca, a troca e o botão. De 1024 a 1279px, as âncoras ficam sem ícone. De 1024 a 1399px, o botão do WhatsApp fica só com o logo (a palavra continua para o leitor de tela): com a troca de tema, é o que faz a barra caber.
 - **Ao rolar (24px):** a mesma navegação encolhe para 60px, desce 12px do topo e vira uma placa branca sólida, canto de 12px, fio em volta e a sombra curta da navegação (520ms, curva de saída). Âncoras em tinta suave com hover rosa claro e texto azul marinho; a âncora da seção que está sendo lida ganha só um traço de 2px em rosa de traço embaixo da palavra, centrado e com 70% da largura do rótulo, sem mudar texto nem fundo (`aria-current="location"`), trocando quando a seção cruza uma faixa a 35% do topo da tela. Sobre o céu e entre seções sem âncora, nenhuma fica acesa. O botão vira azul cheio.
 - **Voltar ao topo:** disco azul marinho de 48px no canto, com a sombra curta. Aparece depois de 90% da altura da tela e fica fora do Tab enquanto escondido.
 
@@ -333,7 +344,7 @@ A vitrine é a faixa de rosa claro que segura a tela recriada (16px no celular, 
 
 ### Visor das telas
 
-Os prints de "O painel de perto" abrem em tela cheia na própria página, com `yet-another-react-lightbox`, a mesma biblioteca da galeria do painel. Fundo na noite do céu, sólido. O print fica entre a barra de cima (o nome da tela à esquerda; aproximar, afastar e fechar à direita) e a legenda embaixo, que termina em "Dados fictícios.", sem passar por baixo de nenhuma das duas. Setas e Esc no teclado, toque para passar, zoom para ler o detalhe. O visor segue o aparelho escolhido e só é baixado quando alguém abre um print; sem JavaScript, o link abre o arquivo. Ao fechar, o foco volta ao print. Com movimento reduzido, sem animação.
+Os prints de "O painel de perto" (na versão do tema na tela) abrem em tela cheia na própria página, com `yet-another-react-lightbox`, a mesma biblioteca da galeria do painel. Fundo na noite do céu, sólido. O print fica entre a barra de cima (o nome da tela à esquerda; aproximar, afastar e fechar à direita) e a legenda embaixo, que termina em "Dados fictícios.", sem passar por baixo de nenhuma das duas. Setas e Esc no teclado, toque para passar, zoom para ler o detalhe. O visor segue o aparelho escolhido e só é baixado quando alguém abre um print; sem JavaScript, o link abre o arquivo. Ao fechar, o foco volta ao print. Com movimento reduzido, sem animação.
 
 ### Meus certificados recriado
 

@@ -6,7 +6,7 @@ import type { ComponentProps, ReactNode } from 'react'
  * No celular, rótulo e apoio sobem a 14px: quem lê é a secretaria, não o dev.
  */
 const base =
-  'w-full rounded-field border border-field bg-white px-3 text-base text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink/60 hover:border-ink/60 focus:border-blue focus:ring-2 focus:ring-blue/20 aria-invalid:border-danger sm:text-[15px]'
+  'w-full rounded-field border border-field bg-paper px-3 text-base text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink/60 hover:border-ink/60 focus:border-blue focus:ring-2 focus:ring-blue/20 aria-invalid:border-danger sm:text-[15px]'
 
 const rotuloClasse = 'block text-[14px] font-medium sm:text-[13px]'
 const apoioClasse = 'text-[14px] sm:text-[13px]'

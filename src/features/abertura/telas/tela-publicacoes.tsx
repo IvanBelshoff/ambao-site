@@ -24,7 +24,7 @@ export function TelaPublicacoes() {
           <span className="flex items-center gap-1.5">
             <span className="flex -space-x-1">
               {(['amem', 'rezando'] as const).map((reacao) => (
-                <span key={reacao} className="flex size-6 items-center justify-center rounded-full bg-pink text-blue ring-2 ring-white">
+                <span key={reacao} className="flex size-6 items-center justify-center rounded-full bg-pink text-blue ring-2 ring-paper">
                   <Icone nome={reacao} className="h-3.5 w-3.5" />
                 </span>
               ))}

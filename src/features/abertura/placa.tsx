@@ -31,7 +31,7 @@ export function Placa({ telas }: { telas: TelaDaPlaca[] }) {
   )
 
   return (
-    <div className="papel overflow-hidden rounded-field bg-white text-ink shadow-card ring-1 ring-white/35 lg:grid lg:h-[34rem] lg:grid-cols-[10.5rem_minmax(0,1fr)]">
+    <div className="papel overflow-hidden rounded-field bg-paper text-ink shadow-card ring-1 ring-white/35 lg:grid lg:h-[34rem] lg:grid-cols-[10.5rem_minmax(0,1fr)]">
       <div className="border-b border-line px-3 pt-4 pb-3 lg:border-r lg:border-b-0 lg:px-2.5 lg:pt-5">
         <p className="hidden px-2.5 text-blue lg:flex">
           <Marca />

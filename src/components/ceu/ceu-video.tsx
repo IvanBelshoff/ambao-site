@@ -1,15 +1,28 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { type TemaResolvido, useTemaResolvido } from '@/lib/tema'
 
 const TROCA_MS = 1200
 
 /**
  * O céu em vídeo, como o Sky da entrada do painel: dois vídeos iguais, e perto do
  * fim um cede o lugar ao outro num esmaecer, para o mar não dar o salto do loop.
- * Fica em reprodução enquanto está na tela; fora dela, pausa.
+ * Fica em reprodução enquanto está na tela; fora dela, pausa. Só o céu do tema na
+ * tela baixa e toca: o do outro tema fica parado e sem arquivo até ser a vez dele.
  */
-export function CeuVideo({ src, tardio, className }: { src: string; tardio: boolean; className: string }) {
+export function CeuVideo({
+  src,
+  tema,
+  tardio,
+  className,
+}: {
+  src: string
+  tema: TemaResolvido
+  tardio: boolean
+  className: string
+}) {
+  const ativo = useTemaResolvido() === tema
   const caixa = useRef<HTMLDivElement>(null)
   const primeiroRef = useRef<HTMLVideoElement>(null)
   const segundoRef = useRef<HTMLVideoElement>(null)
@@ -19,6 +32,16 @@ export function CeuVideo({ src, tardio, className }: { src: string; tardio: bool
     const segundo = segundoRef.current
     const ceu = caixa.current
     if (!primeiro || !segundo || !ceu) return
+    if (!ativo) {
+      // Fora de cena, volta ao começo da emenda: o primeiro na frente, o segundo esperando.
+      primeiro.pause()
+      segundo.pause()
+      primeiro.style.transition = ''
+      segundo.style.transition = ''
+      primeiro.style.opacity = ''
+      segundo.style.opacity = '0'
+      return
+    }
 
     let frente = primeiro
     let fundo = segundo
@@ -39,6 +62,8 @@ export function CeuVideo({ src, tardio, className }: { src: string; tardio: bool
     const carregar = () => {
       if (carregado) return
       carregado = true
+      // Voltando a este tema, o arquivo já está nos vídeos: trocar o src recomeçaria o download.
+      if (primeiro.getAttribute('src') === src) return
       primeiro.src = src
       segundo.src = src
       primeiro.preload = 'auto'
@@ -100,7 +125,7 @@ export function CeuVideo({ src, tardio, className }: { src: string; tardio: bool
       segundo.removeEventListener('timeupdate', trocar)
       window.clearTimeout(espera)
     }
-  }, [src, tardio])
+  }, [src, tardio, ativo])
 
   return (
     <div ref={caixa} className="absolute inset-0">
@@ -109,11 +134,9 @@ export function CeuVideo({ src, tardio, className }: { src: string; tardio: bool
         className={className}
         muted
         playsInline
-        autoPlay={!tardio}
-        preload={tardio ? 'none' : 'auto'}
-        poster={tardio ? undefined : '/ceu.jpg'}
+        preload="none"
       />
-      <video ref={segundoRef} className={className} style={{ opacity: 0 }} muted playsInline preload={tardio ? 'none' : 'auto'} />
+      <video ref={segundoRef} className={className} style={{ opacity: 0 }} muted playsInline preload="none" />
     </div>
   )
 }

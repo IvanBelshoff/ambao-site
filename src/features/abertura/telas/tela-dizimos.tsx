@@ -15,7 +15,7 @@ export function TelaDizimos() {
           </span>
           Outubro de 2026
         </p>
-        <span className="inline-flex h-11 items-center rounded-field bg-blue px-4 text-[15px] font-medium text-white">Novo recebimento</span>
+        <span className="inline-flex h-11 items-center rounded-field bg-action px-4 text-[15px] font-medium text-on-action">Novo recebimento</span>
       </div>
       <p className="tabular mt-4 text-[13px] text-muted">
         <span className="font-medium text-ink">{dizimoDoMes.envelopes} envelopes</span> · {reais(dizimoDoMes.total)} no mês

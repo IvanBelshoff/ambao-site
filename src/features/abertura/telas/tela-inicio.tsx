@@ -17,11 +17,11 @@ export function TelaInicio() {
       <div className="mt-5 rounded-field bg-pink px-4 py-4">
         <h3 className="flex items-center gap-2 text-[15px] font-medium">
           Para fazer agora
-          <span className="tabular rounded-full bg-white px-2 py-0.5 text-[11px] font-medium text-blue">{paraFazer.length}</span>
+          <span className="tabular rounded-full bg-paper px-2 py-0.5 text-[11px] font-medium text-blue">{paraFazer.length}</span>
         </h3>
         <ul className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-2">
           {paraFazer.map((item) => (
-            <li key={item.titulo} className="flex min-h-14 items-center gap-3 rounded-field bg-white px-3 py-2.5">
+            <li key={item.titulo} className="flex min-h-14 items-center gap-3 rounded-field bg-paper px-3 py-2.5">
               <span className={`tabular flex size-9 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold ${item.tom}`}>
                 {item.quantos}
               </span>

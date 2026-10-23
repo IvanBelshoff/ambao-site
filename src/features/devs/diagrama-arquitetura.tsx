@@ -25,9 +25,9 @@ type DadosDaLigacao = { futuro?: boolean }
 type Ligacao = Edge<DadosDaLigacao, 'ligacao'>
 
 const tons = {
-  comum: 'border-line bg-white',
+  comum: 'border-line bg-paper',
   centro: 'border-blue/30 bg-blue-wash',
-  futuro: 'border-dashed border-field bg-white',
+  futuro: 'border-dashed border-field bg-paper',
 } as const
 
 /** Entradas espalhadas no lado de chegada: no meio quando há uma, a 35% e 65% quando há duas. */
@@ -41,7 +41,7 @@ function posicaoDaEntrada(sentido: Sentido, indice: number, total: number) {
  * azul marinho no caminho que existe e cinza no do aplicativo, que ainda não existe.
  */
 const ponto = (futuro: boolean) =>
-  `size-2! min-h-0! min-w-0! rounded-full! border-[1.5px]! bg-white! ${futuro ? 'border-field!' : 'border-blue!'}`
+  `size-2! min-h-0! min-w-0! rounded-full! border-[1.5px]! bg-paper! ${futuro ? 'border-field!' : 'border-blue!'}`
 
 /** A caixa de cada parte: o papel com fio do site, o rótulo em azul marinho e o detalhe em tinta suave. */
 function CaixaDaParte({ data }: NodeProps<NoDaParte>) {

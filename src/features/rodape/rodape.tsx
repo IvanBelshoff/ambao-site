@@ -5,7 +5,7 @@ import { LinkParaDevs } from './link-para-devs'
 
 export function Rodape() {
   return (
-    <footer className="border-t border-line bg-white">
+    <footer className="border-t border-line bg-paper">
       <div className="mx-auto flex w-[90%] max-w-[78rem] flex-wrap items-center justify-between gap-4 py-8 text-[13px] text-muted">
         <p className="text-blue">
           <Marca />

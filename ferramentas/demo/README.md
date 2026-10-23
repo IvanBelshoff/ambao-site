@@ -30,7 +30,7 @@ Os prints de `public/telas/` saem do painel de verdade, rodando contra uma API c
 
 ```bash
 npm run demo:semear   # paróquia, quatro igrejas, escala, dízimo, caixa, mural, galeria
-npm run capturas      # 8 telas em computador, tablet e celular, em public/telas/
+npm run capturas      # 8 telas em computador, tablet e celular, no tema claro e no escuro (-escuro.webp), em public/telas/
 npm run capturas -- escala   # só uma tela
 ```
 

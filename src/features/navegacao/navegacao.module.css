@@ -27,7 +27,7 @@
   margin-top: 0.75rem;
   padding-inline: 1.25rem 0.5rem;
   color: var(--color-ink);
-  background: #fff;
+  background: var(--color-paper);
   box-shadow:
     0 0 0 1px var(--color-line),
     0 12px 32px -16px rgb(9 38 94 / 0.35);
@@ -101,7 +101,8 @@
   padding-inline: 1rem;
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-blue);
+  /* Sobre o céu o botão é branco nos dois temas: o azul do texto é o de fundo, que lê no branco. */
+  color: var(--color-action);
   background: #fff;
   text-shadow: none;
   transition:
@@ -114,16 +115,105 @@
 }
 
 .rolada .acao {
-  color: #fff;
-  background: var(--color-blue);
+  color: var(--color-on-action);
+  background: var(--color-action);
 }
 
 .rolada .acao:hover {
-  background: var(--color-blue-hover);
+  background: var(--color-action-hover);
+}
+
+/* Troca de tema: só o ícone, ao lado do WhatsApp. Branca sobre o céu, quieta na placa. */
+.tema {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-field);
+  color: rgb(255 255 255 / 0.9);
+  transition:
+    background-color 150ms,
+    color 150ms;
+}
+
+.tema:hover,
+.tema[aria-expanded='true'] {
+  background: rgb(255 255 255 / 0.12);
+  color: #fff;
+}
+
+.rolada .tema {
+  color: var(--color-muted);
+}
+
+.rolada .tema:hover,
+.rolada .tema[aria-expanded='true'] {
+  background: var(--color-pink);
+  color: var(--color-blue);
 }
 
 .navegacao:not(.rolada) :focus-visible {
   outline-color: #fff;
+}
+
+/*
+ * O menu do tema: papel com fio, como os menus do painel, e a sombra curta de quem
+ * flutua fixo. Sobre o céu continua papel, então a tinta e o foco voltam ao do papel.
+ */
+@keyframes menu-chega {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+.menuTema {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  display: flex;
+  width: 11.5rem;
+  flex-direction: column;
+  border-radius: var(--radius-field);
+  padding: 0.25rem;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  box-shadow:
+    0 0 0 1px var(--color-line),
+    0 12px 32px -16px rgb(9 38 94 / 0.35);
+  text-shadow: none;
+  transform-origin: top right;
+  animation: menu-chega 140ms var(--ease-saida);
+}
+
+.opcaoTema {
+  display: flex;
+  height: 2.75rem;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: var(--radius-field);
+  padding-inline: 0.75rem;
+  text-align: left;
+  font-size: 14px;
+  color: var(--color-ink);
+  transition:
+    background-color 150ms,
+    color 150ms;
+}
+
+.opcaoTema[aria-checked='true'] {
+  font-weight: 500;
+  color: var(--color-blue);
+}
+
+.opcaoTema:hover,
+.opcaoTema:focus-visible {
+  background: var(--color-pink);
+  color: var(--color-blue);
+  outline: none;
 }
 
 /* Voltar ao topo: aparece depois do céu, no canto, em azul marinho. */
@@ -138,8 +228,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  color: #fff;
-  background: var(--color-blue);
+  color: var(--color-on-action);
+  background: var(--color-action);
   box-shadow: 0 12px 28px -12px rgb(9 38 94 / 0.55);
   opacity: 0;
   transform: translateY(12px) scale(0.9);
@@ -157,7 +247,7 @@
 }
 
 .aoTopo:hover {
-  background: var(--color-blue-hover);
+  background: var(--color-action-hover);
 }
 
 @media (min-width: 1024px) {
@@ -171,7 +261,13 @@
   .casca,
   .link,
   .link::after,
+  .tema,
+  .opcaoTema,
   .aoTopo {
     transition: none;
+  }
+
+  .menuTema {
+    animation: none;
   }
 }

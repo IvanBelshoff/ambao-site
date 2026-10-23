@@ -26,5 +26,5 @@ export function Vitrine({
 
 /** A folha: papel branco sobre o rosa. Nunca rosa sobre rosa. */
 export function Folha({ className = 'p-5', children }: { className?: string; children: ReactNode }) {
-  return <div className={`rounded-field bg-white ${className}`}>{children}</div>
+  return <div className={`rounded-field bg-paper ${className}`}>{children}</div>
 }

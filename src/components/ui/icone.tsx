@@ -180,6 +180,20 @@ const tracos = {
       <path d="m6 11 6-6 6 6" />
     </>
   ),
+  sol: (
+    <>
+      <circle cx="12" cy="12" r="3.75" />
+      <path d="M12 3v1.75M12 19.25V21M3 12h1.75M19.25 12H21M5.6 5.6l1.25 1.25M17.15 17.15l1.25 1.25M5.6 18.4l1.25-1.25M17.15 6.85l1.25-1.25" />
+    </>
+  ),
+  lua: <path d="M19.5 14.2A7.75 7.75 0 0 1 9.8 4.5a7.75 7.75 0 1 0 9.7 9.7z" />,
+  /** Tema automático: metade clara, metade escura. */
+  automatico: (
+    <>
+      <circle cx="12" cy="12" r="7.75" />
+      <path d="M12 4.25a7.75 7.75 0 0 1 0 15.5z" fill="currentColor" stroke="none" />
+    </>
+  ),
 } satisfies Record<string, ReactNode>
 
 export type NomeIcone = keyof typeof tracos

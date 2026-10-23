@@ -49,7 +49,7 @@ export function TelaLeitura() {
       </ul>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-        <span className="inline-flex h-10 items-center rounded-field bg-blue px-4 text-[14px] font-medium text-white">
+        <span className="inline-flex h-10 items-center rounded-field bg-action px-4 text-[14px] font-medium text-on-action">
           Marcar como lida
         </span>
         <p className="text-[13px] text-muted">

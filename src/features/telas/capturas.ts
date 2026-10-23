@@ -1,8 +1,9 @@
 import type { NomeIcone } from '@/components/ui/icone'
 
 /**
- * Os prints do painel em `public/telas/<tela>-<aparelho>.webp`, tirados com a
- * paróquia de demonstração (ferramentas/demo). Cada arquivo tem a procedência ao lado.
+ * Os prints do painel em `public/telas/<tela>-<aparelho>.webp`, e a versão no tema
+ * escuro em `<tela>-<aparelho>-escuro.webp`, tirados com a paróquia de demonstração
+ * (ferramentas/demo). Cada arquivo tem a procedência ao lado.
  */
 
 export const aparelhos = {
@@ -24,4 +25,5 @@ export const capturas = [
   { tela: 'galeria', titulo: 'Galeria', descricao: 'Álbuns da paróquia, da igreja e das celebrações.' },
 ] as const
 
-export const arquivoDaCaptura = (tela: string, aparelho: Aparelho) => `/telas/${tela}-${aparelho}.webp`
+export const arquivoDaCaptura = (tela: string, aparelho: Aparelho, escuro = false) =>
+  `/telas/${tela}-${aparelho}${escuro ? '-escuro' : ''}.webp`

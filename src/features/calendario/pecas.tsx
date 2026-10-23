@@ -6,7 +6,7 @@ import { type ItemDoCalendario, rotuloProntidao } from './calendario-demo'
 /** O tom do item no painel (calendar-item.ts): evento em azul lavado, celebração em rosa, rascunho tracejado. */
 export function tom(item: ItemDoCalendario) {
   if (item.tipo === 'evento') return 'bg-blue-wash text-blue'
-  if (item.rascunho) return 'border border-dashed border-rose-strong bg-white text-blue'
+  if (item.rascunho) return 'border border-dashed border-rose-strong bg-paper text-blue'
   return 'bg-pink text-blue'
 }
 

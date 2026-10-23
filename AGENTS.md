@@ -22,7 +22,7 @@ O mapa dos repositórios está em `../harness/README.md`.
 
 ## Marca
 
-A mesma do painel: azul marinho, rosa claro, branco, Inter e a cruz como único ornamento. Os tokens em `src/app/globals.css` copiam `../ambao-web/src/index.css`; mudou lá, mude aqui. O céu da entrada do painel abre e fecha a página.
+A mesma do painel: azul marinho, rosa claro, branco, Inter e a cruz como único ornamento. Os tokens em `src/app/globals.css` copiam `../ambao-web/src/index.css`, inclusive o tema escuro (`:root[data-theme='dark']`); mudou lá, mude aqui. O site tem troca rápida de tema na navegação, guardada só no navegador; o painel escolhe o tema no Perfil e guarda na conta. O céu da entrada do painel abre e fecha a página.
 
 ## O que não se improvisa
 
@@ -33,3 +33,13 @@ A mesma do painel: azul marinho, rosa claro, branco, Inter e a cruz como único 
 - O formulário de contato só monta a mensagem e abre o WhatsApp ou o e-mail. Nada vai para servidor.
 - A única coisa que sai do navegador é a contagem do Umami (`UMAMI_WEBSITE_ID`, em `src/config/umami.ts`): visitas e eventos de contato por `src/lib/rastrear.ts` e `data-umami-event`. Evento nunca leva nome, paróquia, cidade nem mensagem.
 - Canal de contato vazio esconde o botão no site publicado. Os canais vêm do `.env` (`WHATSAPP_NUMBER`, `EMAIL_USER`, `PROFILE_LINKEDIN`, `PROFILE_GITHUB`), lidos e validados com Zod em `src/config/contato.ts` e levados ao navegador pelo `env` de `next.config.ts`.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
