@@ -101,8 +101,12 @@
   padding-inline: 1rem;
   font-size: 15px;
   font-weight: 500;
-  /* Sobre o céu o botão é branco nos dois temas: o azul do texto é o de fundo, que lê no branco. */
-  color: var(--color-action);
+  /*
+   * Sobre o céu o botão é o mesmo nos dois temas, com os valores do claro: branco,
+   * azul marinho e o rosa claro no hover. No escuro, o rosa do tema é o noturno e
+   * apagaria o botão. Com a barra rolada, ele segue o tema (`.rolada .acao`).
+   */
+  color: #1243a0;
   background: #fff;
   text-shadow: none;
   transition:
@@ -111,7 +115,7 @@
 }
 
 .acao:hover {
-  background: var(--color-pink);
+  background: #f8e7ec;
 }
 
 .rolada .acao {
