@@ -151,6 +151,29 @@ const tracos = {
       <path d="M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5" />
     </>
   ),
+  certificado: (
+    <>
+      <path d="M14 3.5H6.5a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h5" />
+      <path d="M14 3.5 18.5 8v3" />
+      <path d="M14 3.5V8h4.5" />
+      <path d="M8.5 11.5h5M8.5 14.5h3" />
+      <circle cx="17" cy="16" r="2.5" />
+      <path d="m15.75 18.25-.75 3 2-1 2 1-.75-3" />
+    </>
+  ),
+  info: (
+    <>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 11v5" />
+      <circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none" />
+    </>
+  ),
+  baixar: (
+    <>
+      <path d="M12 4v11M7.5 10.5 12 15l4.5-4.5" />
+      <path d="M5 19.5h14" />
+    </>
+  ),
   topo: (
     <>
       <path d="M12 19V5" />

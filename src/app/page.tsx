@@ -1,5 +1,7 @@
 import { Abertura } from '@/features/abertura/abertura'
 import { Acervo } from '@/features/acervo/acervo'
+import { Apresentacao } from '@/features/apresentacao/apresentacao'
+import { Certificados } from '@/features/certificados/certificados'
 import { Avisos } from '@/features/avisos/avisos'
 import { Calendario } from '@/features/calendario/calendario'
 import { Encerramento } from '@/features/contato/encerramento'
@@ -24,6 +26,7 @@ export default function Pagina() {
       <Navegacao />
       <Abertura />
       <main id="conteudo">
+        <Apresentacao />
         <Escalas />
         <Musica />
         <Calendario />
@@ -31,6 +34,7 @@ export default function Pagina() {
         <Dizimo />
         <Avisos />
         <Acervo />
+        <Certificados />
         <Paroquia />
         <Recursos />
         <Telas />

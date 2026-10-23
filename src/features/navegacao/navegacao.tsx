@@ -18,6 +18,7 @@ const ancoras: { id: string; rotulo: string; icone: NomeIcone }[] = [
   { id: 'dizimo', rotulo: 'Dízimo', icone: 'dizimo' },
   { id: 'avisos', rotulo: 'Avisos', icone: 'comunicado' },
   { id: 'acervo', rotulo: 'Acervo', icone: 'galeria' },
+  { id: 'certificados', rotulo: 'Certificados', icone: 'certificado' },
   { id: 'paroquia', rotulo: 'Paróquia', icone: 'igreja' },
   { id: 'telas', rotulo: 'Telas', icone: 'monitor' },
 ]
@@ -56,7 +57,7 @@ export function Navegacao() {
         <a href="#topo" className={`${estilo.marca} flex rounded-field py-1`} aria-label="Ambão, voltar ao topo">
           <Marca />
         </a>
-        <nav aria-label="Seções" className="hidden items-center gap-0.5 lg:flex">
+        <nav aria-label="Seções" className="hidden items-center lg:flex">
           {ancoras.map((ancora) => (
             <a
               key={ancora.id}
@@ -64,7 +65,7 @@ export function Navegacao() {
               aria-current={ancora.id === ativa ? 'location' : undefined}
               className={`${estilo.link} inline-flex items-center gap-1.5`}
             >
-              {/* O ícone só entra a partir de 1280px: entre 1024 e 1279px, as nove âncoras não cabem com ele. */}
+              {/* O ícone só entra a partir de 1280px: entre 1024 e 1279px, as dez âncoras não cabem com ele. */}
               <Icone nome={ancora.icone} className="hidden h-4 w-4 xl:block" />
               {ancora.rotulo}
             </a>
@@ -72,10 +73,7 @@ export function Navegacao() {
         </nav>
         <LinkContato canal="whatsapp" className={estilo.acao}>
           <LogoWhatsapp />
-          <span>
-            {/* "no WhatsApp" some onde a barra divide o espaço com as âncoras e ainda não cabe (1024 a 1399px). */}
-            Conversar<span className="hidden sm:inline lg:hidden min-[87.5rem]:inline"> no WhatsApp</span>
-          </span>
+          <span>WhatsApp</span>
         </LinkContato>
       </div>
     </header>

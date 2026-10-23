@@ -2,8 +2,10 @@ import { Ceu } from '@/components/ceu/ceu'
 import { BotaoLink } from '@/components/ui/botao'
 import { Placa, type TelaDaPlaca } from './placa'
 import { TelaCalendario } from './telas/tela-calendario'
+import { TelaCertificados } from './telas/tela-certificados'
 import { TelaDizimos } from './telas/tela-dizimos'
 import { TelaInicio } from './telas/tela-inicio'
+import { TelaLeitura } from './telas/tela-leitura'
 import { TelaParticipacoes } from './telas/tela-participacoes'
 import { TelaPublicacoes } from './telas/tela-publicacoes'
 
@@ -13,6 +15,8 @@ const telas: TelaDaPlaca[] = [
   { id: 'dizimo', rotulo: 'Dízimos', icone: 'dizimo', conteudo: <TelaDizimos /> },
   { id: 'publicacoes', rotulo: 'Publicações', icone: 'publicacoes', conteudo: <TelaPublicacoes /> },
   { id: 'calendario', rotulo: 'Calendário', icone: 'calendario', conteudo: <TelaCalendario /> },
+  { id: 'leitura', rotulo: 'Leitura do dia', icone: 'leitura', conteudo: <TelaLeitura /> },
+  { id: 'certificados', rotulo: 'Certificados', icone: 'certificado', conteudo: <TelaCertificados /> },
 ]
 
 /** Ritos iniciais: o céu da entrada do painel e o painel aberto sobre ele. */
@@ -27,10 +31,11 @@ export function Abertura() {
             Uma paróquia, muitas igrejas, a mesma comunidade.
           </h1>
           <p className="mt-6 max-w-[34rem] text-[1.125rem] leading-[1.6] text-pretty text-white/92 sm:text-[1.1875rem]">
-            Escalas, dízimo, caixa e avisos de cada igreja num só lugar, com a paróquia acompanhando tudo de perto.
+            O Ambão é um sistema para paróquias católicas. Cada igreja cuida das próprias escalas, do dízimo, da
+            caixa e dos avisos, e a paróquia acompanha tudo num só lugar.
           </p>
           <div className="mt-9 flex flex-wrap gap-3 [text-shadow:none]">
-            <BotaoLink variante="ceu-contorno" href="#escalas">
+            <BotaoLink variante="ceu-contorno" href="#o-que-e">
               Ver como funciona
             </BotaoLink>
           </div>

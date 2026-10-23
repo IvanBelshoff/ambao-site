@@ -42,6 +42,7 @@ O que a página pode afirmar, porque existe no painel:
 - Dízimo da igreja: recibo numerado, várias competências por recebimento, entrada automática na caixa, extrato da própria pessoa.
 - Publicações: comunicado oficial da paróquia ou da igreja, visibilidade interna ou para toda a paróquia, reações, comentários, enquete, seguir paróquia ou igreja para receber aviso.
 - Galeria com álbuns da paróquia, da igreja e de cada celebração.
+- Certificados: a paróquia guarda a cópia (imagem ou PDF) de batismo, crisma, matrimônio ou curso na ficha da pessoa, com tipos que ela mesma cadastra, data, local e livro, folha e termo; a pessoa vê e baixa em Meus certificados e recebe um aviso. O Ambão guarda a cópia e não emite certidão. Ver os certificados dos outros é permissão à parte.
 - Rifas, treinamentos da paróquia, cantina (cardápio em fichas), música (repertórios e cantos).
 - Tela inicial que muda com o perfil e mostra primeiro o que pede decisão.
 

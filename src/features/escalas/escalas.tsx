@@ -15,7 +15,6 @@ export function Escalas() {
   return (
     <Momento
       id="escalas"
-      primeiro
       titulo="Quem faz a leitura na missa de domingo?"
       rubrica="Sábado à noite."
       leitura="A coordenação ainda confirma pelo grupo quem lê, quem canta e quem leva as oferendas. Com tanta mensagem, uma troca de última hora passa despercebida."

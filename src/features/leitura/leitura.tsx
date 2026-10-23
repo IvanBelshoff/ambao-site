@@ -1,29 +1,10 @@
 import { Momento } from '@/features/folheto/momento'
 import { Folha, Vitrine } from '@/features/folheto/vitrine'
-
-type Dia = { nome: string; numero: number; estado?: 'lido' | 'hoje' }
-
-/** A semana de 19 a 25 de outubro de quem foi escalado para o salmo. Dados fictícios. */
-const semana: Dia[] = [
-  { nome: 'Seg', numero: 19, estado: 'lido' },
-  { nome: 'Ter', numero: 20, estado: 'lido' },
-  { nome: 'Qua', numero: 21, estado: 'hoje' },
-  { nome: 'Qui', numero: 22 },
-  { nome: 'Sex', numero: 23 },
-  { nome: 'Sáb', numero: 24 },
-  { nome: 'Dom', numero: 25 },
-]
-
-const META = 5
-
-const estiloDoDia = {
-  lido: 'bg-blue font-medium text-white',
-  hoje: 'font-medium text-blue ring-1 ring-blue ring-inset',
-} as const
+import { META_SEMANAL as META, diasLidos, estiloDoDia, semanaDeLeitura as semana, sequencia } from './leitura-demo'
 
 /** Um momento mais quieto: a Palavra durante a semana. */
 export function Leitura() {
-  const lidos = semana.filter((dia) => dia.estado === 'lido').length
+  const lidos = diasLidos
   return (
     <Momento
       id="leitura"
@@ -60,7 +41,7 @@ export function Leitura() {
               </span>
               <p className="mt-2 text-[13px] text-muted">Marca sozinho ao chegar ao fim.</p>
               <p className="mt-5 border-t border-line pt-4 text-[13px] text-muted">
-                <span className="font-medium text-ink">6 semanas seguidas</span> · a maior foi de 9
+                <span className="font-medium text-ink">{sequencia.atual} semanas seguidas</span> · a maior foi de {sequencia.maior}
               </p>
             </div>
           </Folha>

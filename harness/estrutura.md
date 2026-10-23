@@ -31,7 +31,7 @@ A pasta diz o domínio, como no painel (`../../harness/clientes.md`). Sem camada
 | `src/config` | O que o autor preenche antes de publicar: os canais de contato |
 | `src/lib` | Infra sem tela: abas pelo teclado, media query, reais |
 
-Seções, na ordem da página: `navegacao`, `abertura` (céu e placa), `escalas`, `musica`, `calendario`, `leitura`, `dizimo`, `avisos`, `acervo`, `paroquia`, `recursos`, `telas` (prints), `devs`, `contato` (fechamento e formulário) e `rodape`.
+Seções, na ordem da página: `navegacao`, `abertura` (céu e placa), `apresentacao` (o que é o Ambão), `escalas`, `musica`, `calendario`, `leitura`, `dizimo`, `avisos`, `acervo`, `certificados`, `paroquia`, `recursos`, `telas` (prints), `devs`, `contato` (fechamento e formulário) e `rodape`.
 
 ## Servidor e cliente
 

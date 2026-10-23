@@ -11,7 +11,6 @@ export type TelaDaPlaca = { id: string; rotulo: string; icone: NomeIcone; conteu
 
 /** Os outros módulos do painel: só leitura, para mostrar o tamanho do sistema. */
 const outras: { rotulo: string; icone: NomeIcone }[] = [
-  { rotulo: 'Leitura do dia', icone: 'leitura' },
   { rotulo: 'Galeria', icone: 'galeria' },
   { rotulo: 'Financeiro', icone: 'financeiro' },
   { rotulo: 'Música', icone: 'musica' },

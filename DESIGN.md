@@ -308,13 +308,17 @@ O canto é o do campo, 4px, em botão, aba, placa, faixa da resposta, vitrine, f
 
 ### Navigation
 
-- **No céu:** 80px de altura, na medida da página. Cruz e AMBÃO à esquerda; no meio, uma âncora por momento, na ordem da página e com rótulo de uma palavra (Escalas, Música, Calendário, Leitura, Dízimo, Avisos, Acervo, Paróquia, Telas) e o ícone de traço de 16px do módulo à esquerda, em 14px médio e 8px de respiro, branco a 90%, hover lava branco a 12%; à direita, "Conversar no WhatsApp" em botão branco com o logo do WhatsApp. Abaixo de 1024px, só a marca e o botão. De 1024 a 1279px, as âncoras ficam sem ícone; até 1399px, o botão diz só "Conversar".
+- **No céu:** 80px de altura, na medida da página. Cruz e AMBÃO à esquerda; no meio, uma âncora por momento, na ordem da página e com rótulo de uma palavra (Escalas, Música, Calendário, Leitura, Dízimo, Avisos, Acervo, Certificados, Paróquia, Telas) e o ícone de traço de 16px do módulo à esquerda, em 14px médio, 8px de respiro em cima e 6px de lado, sem vão entre elas (com dez âncoras, é o que faz o botão caber em 1024, 1280 e a partir de 1400px), branco a 90%, hover lava branco a 12%; à direita, "WhatsApp" em botão branco com o logo do WhatsApp, em todas as larguras. Abaixo de 1024px, só a marca e o botão. De 1024 a 1279px, as âncoras ficam sem ícone.
 - **Ao rolar (24px):** a mesma navegação encolhe para 60px, desce 12px do topo e vira uma placa branca sólida, canto de 12px, fio em volta e a sombra curta da navegação (520ms, curva de saída). Âncoras em tinta suave com hover rosa claro e texto azul marinho; a âncora da seção que está sendo lida ganha só um traço de 2px em rosa de traço embaixo da palavra, centrado e com 70% da largura do rótulo, sem mudar texto nem fundo (`aria-current="location"`), trocando quando a seção cruza uma faixa a 35% do topo da tela. Sobre o céu e entre seções sem âncora, nenhuma fica acesa. O botão vira azul cheio.
 - **Voltar ao topo:** disco azul marinho de 48px no canto, com a sombra curta. Aparece depois de 90% da altura da tela e fica fora do Tab enquanto escondido.
 
 ### Placa do painel
 
-A tela de Início do painel recriada com dados fictícios, numa placa branca de canto de campo, com a sombra da entrada. No desktop, uma lateral de 10.5rem com a marca, cinco abas que trocam a tela (Início, Participações, Dízimos, Publicações e Calendário) e, abaixo de um fio, os outros módulos em 13px tinta suave a 80% (só leitura). No celular a lateral vira uma fileira de abas que rola de lado. A aba repousa em tinta suave e seleciona em rosa claro com texto azul marinho. A tela nova chega em 280ms, com 6px de subida e 2px de desfoque, sem esconder antes a anterior. A nota "Dados fictícios" fica no canto da tela, em pílula de superfície.
+A tela de Início do painel recriada com dados fictícios, numa placa branca de canto de campo, com a sombra da entrada. No desktop, uma lateral de 10.5rem com a marca, sete abas que trocam a tela (Início, Participações, Dízimos, Publicações, Calendário, Leitura do dia e Certificados; a leitura e os certificados usam os mesmos dados fictícios das seções deles) e, abaixo de um fio, os outros módulos em 13px tinta suave a 80% (só leitura). No celular a lateral vira uma fileira de abas que rola de lado. A aba repousa em tinta suave e seleciona em rosa claro com texto azul marinho. A tela nova chega em 280ms, com 6px de subida e 2px de desfoque, sem esconder antes a anterior. A nota "Dados fictícios" fica no canto da tela, em pílula de superfície.
+
+### O que é o Ambão
+
+A seção logo depois do céu, antes do primeiro momento. Não é um momento: não responde a uma dor, explica o sistema antes dos casos de uso. Sobe o topo como o primeiro momento subia (56px no celular, 48px no desktop), para o título espiar na borda do céu. À esquerda, o título de seção, a **definição** (500, 1.375rem e 1.5rem a partir de 640px, line-height 1.45, tracking -0.015em, medida de 30rem: a frase que diz o que o Ambão é) e uma leitura em tinta suave. À direita, uma ficha de três linhas no padrão da ficha técnica, com o rótulo em 15px médio azul marinho numa coluna de 9rem e o valor em 17px: Para quem, O que organiza e Como divide. Em "O que organiza" cada assunto é um link sublinhado em azul a 30% que leva ao momento. Embaixo, em 15px tinta suave, uma linha que anuncia os momentos.
 
 ### Momento do folheto
 
@@ -330,6 +334,10 @@ A vitrine é a faixa de rosa claro que segura a tela recriada (16px no celular, 
 ### Visor das telas
 
 Os prints de "O painel de perto" abrem em tela cheia na própria página, com `yet-another-react-lightbox`, a mesma biblioteca da galeria do painel. Fundo na noite do céu, sólido. O print fica entre a barra de cima (o nome da tela à esquerda; aproximar, afastar e fechar à direita) e a legenda embaixo, que termina em "Dados fictícios.", sem passar por baixo de nenhuma das duas. Setas e Esc no teclado, toque para passar, zoom para ler o detalhe. O visor segue o aparelho escolhido e só é baixado quando alguém abre um print; sem JavaScript, o link abre o arquivo. Ao fechar, o foco volta ao print. Com movimento reduzido, sem animação.
+
+### Meus certificados recriado
+
+No momento Certificados, a vitrine segura duas folhas: a tela da pessoa e a lista da secretaria. A da pessoa é uma caminhada: uma folhinha miniatura por certificado (44px de largura, mês em 10px na tarja azul, dia em 17px, ano em 10px no pé, a única exceção de tamanho abaixo de 11px no site, porque é a folhinha reduzida do painel), ligadas por um fio vertical; ao lado, o cartão com o tipo, o local e o celebrante, e o registro no livro num carimbo de três casas em superfície. O certificado novo leva fio azul a 40%, rosa claro a 40% e o selo "Novo". No celular, o botão Abrir desce para baixo do cartão.
 
 ### Lista de recursos
 
