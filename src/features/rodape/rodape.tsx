@@ -12,7 +12,7 @@ export function Rodape() {
         </p>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <p>
-            Feito por Ivan Belshoff · <LinkParaDevs /> · As telas desta página usam dados fictícios.
+            Feito com carinho ❤️ por Ivan Belshoff · <LinkParaDevs /> · As telas desta página usam dados fictícios.
           </p>
           {/* Só o símbolo: o nome vem no rótulo, para leitor de tela e ao parar o mouse. */}
           <LinkContato
