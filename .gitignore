@@ -37,3 +37,6 @@ public/telas/*.falhou.webp
 .DS_Store
 Thumbs.db
 .claude/settings.local.json
+
+# Binário do Impeccable: baixado na primeira execução, um por sistema operacional
+**/skills/impeccable/scripts/bin/
